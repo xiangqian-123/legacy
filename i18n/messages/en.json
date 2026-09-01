@@ -1,0 +1,95 @@
+{
+  "nav": {
+    "beginner": "Beginner Guide",
+    "sophia": "Sophia",
+    "charms": "Charms",
+    "skills": "Skills",
+    "story": "Story",
+    "faq": "FAQ"
+  },
+  "hero": {
+    "eyebrow": "Fan-Made Community Wiki",
+    "title": "Resonance: A Plague Tale Legacy",
+    "description": "The Plague Tale prequel: young plunderer Sophia braves Minotaur Island and uncovers the origins of the Macula across a dual timeline. Combat, puzzles, and full collectible guides.",
+    "stats": [
+      "Released Aug 27, 2026",
+      "PS5 / Xbox Series X|S / PC",
+      "Day One on Xbox Game Pass",
+      "Full Simplified Chinese Audio",
+      "13 Chapters · 12-14 Hours",
+      "Metascore 78 · User Score 8.1"
+    ],
+    "ctaPrimary": "Start Beginner Guide",
+    "ctaSecondary": "Read Reviews",
+    "ctaThird": "Watch Launch Trailer",
+    "videoLabel": "Official Trailer"
+  },
+  "startHere": {
+    "title": "Start Here",
+    "lead": "Four entry points to jump straight to what you need.",
+    "cards": [
+      {
+        "title": "Beginner Guide",
+        "desc": "Combat, puzzles and collectibles in one line: opening route, parries, Focus Attacks, and the Resonance Points you should never miss.",
+        "slug": "beginner"
+      },
+      {
+        "title": "Sophia, the Plunderer",
+        "desc": "The prequel protagonist and her ties to the series: her raider past, the dual timeline, and the echo of Theseus.",
+        "slug": "sophia"
+      },
+      {
+        "title": "All Charm Locations",
+        "desc": "All 30 charms chapter by chapter: 6 effect types, the 5 Pierced Coin bowls, and linked trophies.",
+        "slug": "charms"
+      },
+      {
+        "title": "Skills & Builds",
+        "desc": "How to spend 200 Resonance Points: all five skills rated, three build routes, and free respec.",
+        "slug": "skills"
+      }
+    ]
+  },
+  "about": {
+    "title": "What is Resonance: A Plague Tale Legacy",
+    "paragraphs": [
+      "Resonance: A Plague Tale Legacy is an action-adventure game developed by Asobo Studio and published by Focus Entertainment, released on August 27, 2026 for PS5, Xbox Series X|S and PC — day one on Xbox Game Pass. Set 15 years before A Plague Tale: Requiem, you play as Sophia, a young plunderer who braves the trial-ridden Minotaur Island in search of the lost treasure her late father chased.",
+      "The game reinvents the formula: dynamic melee combat replaces stealth-heavy encounters, light-reflection puzzles reach new heights, and the series' iconic rat swarms give way to an ancient threat lurking in forgotten labyrinths. As Sophia descends, she experiences flashbacks to the Minoan era — living the brutal trials of the legendary hero Theseus across a dual timeline spanning 2,000 years, closing in on the very origins of the Macula. Anna Demetriou voices Sophia, with an original score by Olivier Derivière.",
+      "This wiki also compiles complete guide data: the 13-chapter list, all 30 charm and 7 blade locations, skill builds, plus media review and community sentiment roundups."
+    ],
+    "facts": [
+      { "label": "Developer", "value": "Asobo Studio" },
+      { "label": "Publisher", "value": "Focus Entertainment" },
+      { "label": "Platform", "value": "PS5 / Xbox Series X|S / PC (Steam · Epic)" },
+      { "label": "Genre", "value": "Action Adventure" },
+      { "label": "Release", "value": "Aug 27, 2026" },
+      { "label": "Price", "value": "$59.99" },
+      { "label": "Game Pass", "value": "Day One · Xbox Play Anywhere" },
+      { "label": "Story", "value": "Prequel to Requiem · 15 years earlier" },
+      { "label": "Length", "value": "12-14 hours main story" },
+      { "label": "Languages", "value": "Simplified Chinese: UI / Full Audio / Subtitles" }
+    ]
+  },
+  "trailer": {
+    "title": "Official Launch Trailer",
+    "lead": "Premiered at Gamescom 2026 Opening Night Live — a reinterpretation of Depeche Mode's Enjoy the Silence, exploring loss, betrayal and destiny."
+  },
+  "cta": {
+    "title": "Ready to Begin Sophia's Journey?",
+    "description": "From your first sword swing to the truth of the Macula, this fan wiki covers it all: beginner guides, skill builds, full charm and blade collections, and the ending explained.",
+    "primary": "Read the Beginner Guide",
+    "secondary": "Play on Steam"
+  },
+  "footer": {
+    "aboutTitle": "Resonance Plague Tale Wiki",
+    "about": "Resonance Plague Tale Wiki is an independent fan site covering beginner guides, skill builds, complete charm and blade locations, the chapter list, the ending explained, and language support for Resonance: A Plague Tale Legacy. Our goal: every secret of Minotaur Island, explained.",
+    "playGame": "Play Resonance",
+    "officialSite": "Official Site",
+    "community": "Community",
+    "communityTool": "Official Page",
+    "legal": "Legal",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "disclaimer": "Unofficial fan site, not affiliated with Asobo Studio or Focus Entertainment. Game trademarks belong to their respective owners."
+  }
+}

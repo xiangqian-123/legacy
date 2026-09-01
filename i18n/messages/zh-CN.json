@@ -1,0 +1,95 @@
+{
+  "nav": {
+    "beginner": "新手入门",
+    "sophia": "主角 Sophia",
+    "charms": "护符收集",
+    "skills": "技能加点",
+    "story": "剧情解析",
+    "faq": "常见问题"
+  },
+  "hero": {
+    "eyebrow": "Fan-Made Community Wiki",
+    "title": "Resonance: A Plague Tale Legacy",
+    "description": "《瘟疫传说》系列前传：年轻劫掠者 Sophia 闯入米诺陶洛斯岛，在米诺斯时代的回响中揭开 Macula 的起源。战斗、解谜、全收集，一站搞定。",
+    "stats": [
+      "2026 年 8 月 27 日发售",
+      "PS5 / Xbox Series X|S / PC",
+      "首日加入 Xbox Game Pass",
+      "支持简繁中文全语音",
+      "13 章 · 12-14 小时通关",
+      "Metascore 78 · 玩家分 8.1"
+    ],
+    "ctaPrimary": "开始新手攻略",
+    "ctaSecondary": "查看评测汇总",
+    "ctaThird": "观看发售预告片",
+    "videoLabel": "官方预告片"
+  },
+  "startHere": {
+    "title": "从这里开始",
+    "lead": "四个核心入口，快速定位你要找的内容。",
+    "cards": [
+      {
+        "title": "Beginner Guide 新手入门",
+        "desc": "战斗、解谜、收集一条线讲透：开荒路线、招架与专注攻击、别错过的 Resonance 点数。",
+        "slug": "beginner"
+      },
+      {
+        "title": "Sophia 主角专题",
+        "desc": "前传主角 Sophia 与系列的联系：劫掠者出身、双时间线、忒修斯的回响。",
+        "slug": "sophia"
+      },
+      {
+        "title": "Charms 护符全收集",
+        "desc": "30 个护符逐章位置图解：6 类被动效果、5 个穿孔钱币碗、关联奖杯速查。",
+        "slug": "charms"
+      },
+      {
+        "title": "Skills 技能加点",
+        "desc": "200 点 Resonance 点数怎么花：五技能评测、三条 build 路线、免费洗点机制。",
+        "slug": "skills"
+      }
+    ]
+  },
+  "about": {
+    "title": "什么是 Resonance: A Plague Tale Legacy",
+    "paragraphs": [
+      "Resonance: A Plague Tale Legacy《瘟疫传说：共鸣》是由 Asobo Studio 开发、Focus Entertainment 发行的动作冒险游戏，2026 年 8 月 27 日登陆 PS5、Xbox Series X|S 与 PC，并首日加入 Xbox Game Pass。故事发生在《瘟疫传说：安魂曲》之前 15 年，玩家扮演年轻劫掠者 Sophia，闯入遍布致命试炼的米诺陶洛斯岛，追寻父亲死前追逐的失落宝藏。",
+      "本作大胆转型：动态近战取代了前作的潜行压制，光束反射谜题全面进化，系列标志性的鼠群让位于古代迷宫中的神秘威胁。随着探索深入，Sophia 不断闪回米诺斯时代，亲身经历传奇英雄忒修斯 Theseus 的残酷试炼，并在跨越 2000 年的双时间线中，一步步逼近 Macula 疫病的起源。配音阵容包含 Anna Demetriou（Sophia），原声带由 Olivier Derivière 作曲。",
+      "本站同时收录完整攻略数据：13 章章节列表、30 个护符与 7 把刀剑的全收集位置、技能树加点路线，以及媒体评测与玩家社区口碑汇总。"
+    ],
+    "facts": [
+      { "label": "Developer", "value": "Asobo Studio" },
+      { "label": "Publisher", "value": "Focus Entertainment" },
+      { "label": "Platform", "value": "PS5 / Xbox Series X|S / PC (Steam · Epic)" },
+      { "label": "Genre", "value": "Action Adventure 动作冒险" },
+      { "label": "Release", "value": "2026-08-27（中国大陆 8/28 00:00 解锁）" },
+      { "label": "Price", "value": "$59.99" },
+      { "label": "Game Pass", "value": "首日入库 · 支持 Xbox Play Anywhere" },
+      { "label": "Story", "value": "《安魂曲》前传 · 时间线早 15 年" },
+      { "label": "Length", "value": "12-14 小时主线" },
+      { "label": "中文支持", "value": "简体中文：界面 / 全语音 / 字幕" }
+    ]
+  },
+  "trailer": {
+    "title": "官方发售预告片",
+    "lead": "Gamescom 2026 开幕夜首映：以 Depeche Mode《Enjoy the Silence》翻唱配乐，讲述失落、背叛与命运。"
+  },
+  "cta": {
+    "title": "准备好踏上 Sophia 的旅程了吗？",
+    "description": "从第一次挥剑到 Macula 的真相，这个粉丝 Wiki 覆盖了你需要的一切：新手指南、技能 build、护符与刀剑全收集、结局解析。",
+    "primary": "阅读新手攻略",
+    "secondary": "在 Steam 上查看"
+  },
+  "footer": {
+    "aboutTitle": "Resonance Plague Tale Wiki",
+    "about": "Resonance Plague Tale Wiki 是一个独立的粉丝攻略站，覆盖《瘟疫传说：共鸣》的新手入门、技能加点、护符与刀剑全收集、章节列表、结局解析与中文支持说明。我们的目标是把米诺陶洛斯岛的每一个秘密都讲清楚。",
+    "playGame": "玩 Resonance",
+    "officialSite": "官方网站",
+    "community": "社区",
+    "communityTool": "官方页面",
+    "legal": "法律",
+    "privacyPolicy": "隐私政策",
+    "termsOfService": "服务条款",
+    "disclaimer": "非官方粉丝站，与 Asobo Studio 及 Focus Entertainment 无关联。游戏相关商标归其各自所有者所有。"
+  }
+}
