@@ -139,7 +139,7 @@ img {
   border-radius: 18px;
   box-shadow: 0 24px 60px hsl(var(--nav-theme) / 0.25);
   border: 1px solid rgb(var(--border));
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
 }
 @media (max-width: 800px) {
@@ -148,7 +148,7 @@ img {
     gap: 28px;
   }
   .hero-art img {
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 4 / 5;
   }
 }
 .eyebrow {
@@ -264,6 +264,7 @@ img {
   transform: translateY(-3px);
   border-color: hsl(var(--nav-theme));
   box-shadow: 0 12px 30px hsl(var(--nav-theme) / 0.12);
+  text-decoration: none;
 }
 .card-img {
   height: 140px;
@@ -278,16 +279,19 @@ img {
   font-size: 1.15rem;
   font-weight: 700;
   margin-bottom: 8px;
+  color: rgb(var(--text));
 }
 .card p {
   color: rgb(var(--text-muted));
   font-size: 0.95rem;
 }
 .card .num {
-  font-size: 0.8rem;
+  display: inline;
+  font-size: inherit;
   font-weight: 800;
   color: hsl(var(--nav-theme));
   letter-spacing: 0.05em;
+  margin-right: 8px;
 }
 
 /* What is GameName 左右布局 */
@@ -302,7 +306,7 @@ img {
   border-radius: 16px;
   box-shadow: 0 16px 40px hsl(var(--nav-theme) / 0.16);
   border: 1px solid rgb(var(--border));
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
 }
 @media (max-width: 800px) {
@@ -470,9 +474,11 @@ img {
 }
 .prose table {
   width: 100%;
+  table-layout: fixed;
   border-collapse: collapse;
   margin: 18px 0;
   font-size: 0.95rem;
+  overflow-wrap: break-word;
 }
 .prose table th,
 .prose table td {
