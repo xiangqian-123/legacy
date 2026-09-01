@@ -298,7 +298,7 @@ img {
 /* What is GameName 左右布局 */
 .about-grid {
   display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
+  grid-template-columns: 1fr 1.1fr;
   gap: 44px;
   align-items: stretch;
 }

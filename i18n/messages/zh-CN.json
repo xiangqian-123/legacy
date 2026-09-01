@@ -53,21 +53,16 @@
   "about": {
     "title": "什么是 Resonance: A Plague Tale Legacy",
     "paragraphs": [
-      "Resonance: A Plague Tale Legacy《瘟疫传说：共鸣》是由 Asobo Studio 开发、Focus Entertainment 发行的动作冒险游戏，2026 年 8 月 27 日登陆 PS5、Xbox Series X|S 与 PC，并首日加入 Xbox Game Pass。故事发生在《瘟疫传说：安魂曲》之前 15 年，玩家扮演年轻劫掠者 Sophia，闯入遍布致命试炼的米诺陶洛斯岛，追寻父亲死前追逐的失落宝藏。",
-      "本作大胆转型：动态近战取代了前作的潜行压制，光束反射谜题全面进化，系列标志性的鼠群让位于古代迷宫中的神秘威胁。随着探索深入，Sophia 不断闪回米诺斯时代，亲身经历传奇英雄忒修斯 Theseus 的残酷试炼，并在跨越 2000 年的双时间线中，一步步逼近 Macula 疫病的起源。配音阵容包含 Anna Demetriou（Sophia），原声带由 Olivier Derivière 作曲。",
-      "本站同时收录完整攻略数据：13 章章节列表、30 个护符与 7 把刀剑的全收集位置、技能树加点路线，以及媒体评测与玩家社区口碑汇总。"
+      "Resonance: A Plague Tale Legacy《瘟疫传说：共鸣》是由 Asobo Studio 开发、Focus Entertainment 发行的动作冒险游戏，2026 年 8 月 27 日发售，是《瘟疫传说：安魂曲》的前传。玩家扮演年轻劫掠者 Sophia，闯入遍布致命试炼的米诺陶洛斯岛，追寻父亲死前追逐的失落宝藏。",
+      "本作大胆转型：动态近战取代潜行压制，光束反射谜题全面进化。随着探索深入，Sophia 不断闪回米诺斯时代，亲身经历传奇英雄忒修斯 Theseus 的残酷试炼，在跨越 2000 年的双时间线中逼近 Macula 疫病的起源。"
     ],
     "facts": [
       { "label": "Developer", "value": "Asobo Studio" },
       { "label": "Publisher", "value": "Focus Entertainment" },
-      { "label": "Platform", "value": "PS5 / Xbox Series X|S / PC (Steam · Epic)" },
+      { "label": "Platform", "value": "PS5 / Xbox Series X|S / PC" },
       { "label": "Genre", "value": "Action Adventure 动作冒险" },
-      { "label": "Release", "value": "2026-08-27（中国大陆 8/28 00:00 解锁）" },
-      { "label": "Price", "value": "$59.99" },
-      { "label": "Game Pass", "value": "首日入库 · 支持 Xbox Play Anywhere" },
-      { "label": "Story", "value": "《安魂曲》前传 · 时间线早 15 年" },
-      { "label": "Length", "value": "12-14 小时主线" },
-      { "label": "中文支持", "value": "简体中文：界面 / 全语音 / 字幕" }
+      { "label": "Release", "value": "2026-08-27" },
+      { "label": "Price", "value": "$59.99" }
     ]
   },
   "trailer": {

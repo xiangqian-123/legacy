@@ -53,21 +53,16 @@
   "about": {
     "title": "What is Resonance: A Plague Tale Legacy",
     "paragraphs": [
-      "Resonance: A Plague Tale Legacy is an action-adventure game developed by Asobo Studio and published by Focus Entertainment, released on August 27, 2026 for PS5, Xbox Series X|S and PC — day one on Xbox Game Pass. Set 15 years before A Plague Tale: Requiem, you play as Sophia, a young plunderer who braves the trial-ridden Minotaur Island in search of the lost treasure her late father chased.",
-      "The game reinvents the formula: dynamic melee combat replaces stealth-heavy encounters, light-reflection puzzles reach new heights, and the series' iconic rat swarms give way to an ancient threat lurking in forgotten labyrinths. As Sophia descends, she experiences flashbacks to the Minoan era — living the brutal trials of the legendary hero Theseus across a dual timeline spanning 2,000 years, closing in on the very origins of the Macula. Anna Demetriou voices Sophia, with an original score by Olivier Derivière.",
-      "This wiki also compiles complete guide data: the 13-chapter list, all 30 charm and 7 blade locations, skill builds, plus media review and community sentiment roundups."
+      "Resonance: A Plague Tale Legacy is an action-adventure game developed by Asobo Studio and published by Focus Entertainment, released on August 27, 2026 — a prequel to A Plague Tale: Requiem. You play as Sophia, a young plunderer who braves the trial-ridden Minotaur Island in search of the lost treasure her late father chased.",
+      "The game reinvents the formula: dynamic melee combat replaces stealth-heavy encounters, and light-reflection puzzles reach new heights. As Sophia descends, she experiences flashbacks to the Minoan era — living the brutal trials of the legendary hero Theseus across a dual timeline spanning 2,000 years, closing in on the very origins of the Macula."
     ],
     "facts": [
       { "label": "Developer", "value": "Asobo Studio" },
       { "label": "Publisher", "value": "Focus Entertainment" },
-      { "label": "Platform", "value": "PS5 / Xbox Series X|S / PC (Steam · Epic)" },
+      { "label": "Platform", "value": "PS5 / Xbox Series X|S / PC" },
       { "label": "Genre", "value": "Action Adventure" },
       { "label": "Release", "value": "Aug 27, 2026" },
-      { "label": "Price", "value": "$59.99" },
-      { "label": "Game Pass", "value": "Day One · Xbox Play Anywhere" },
-      { "label": "Story", "value": "Prequel to Requiem · 15 years earlier" },
-      { "label": "Length", "value": "12-14 hours main story" },
-      { "label": "Languages", "value": "Simplified Chinese: UI / Full Audio / Subtitles" }
+      { "label": "Price", "value": "$59.99" }
     ]
   },
   "trailer": {
