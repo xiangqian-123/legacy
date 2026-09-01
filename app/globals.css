@@ -1,9 +1,10 @@
 :root {
   /* 主题色 —— 复制新站时改成贴近游戏调性的颜色（恐怖游戏用暗红深紫、童话游戏用粉蓝暖黄）。
-     HSL 值：色相 饱和度% 亮度%。改 --nav-theme 三行即可换主题色。 */
-  --nav-theme: 199 89% 48%;        /* cyan-500 #06b6d4 */
-  --nav-theme-light: 187 85% 53%;  /* cyan-400 #22d3ee */
-  --nav-theme-lighter: 187 85% 60%;
+     HSL 值：色相 饱和度% 亮度%。改 --nav-theme 三行即可换主题色。
+     本作《瘟疫传说：共鸣》用暗红锈色（呼应系列血色/鼠疫暗黑基调）。 */
+  --nav-theme: 0 72% 40%;        /* 锈红 #ad1e1e */
+  --nav-theme-light: 0 74% 48%;  /* 亮锈红 #d42626 */
+  --nav-theme-lighter: 0 76% 56%;
 
   /* 语义色 */
   --bg: 255 255 255;
@@ -18,9 +19,9 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --nav-theme: 187 85% 53%;
-    --nav-theme-light: 187 85% 60%;
-    --nav-theme-lighter: 187 85% 68%;
+    --nav-theme: 0 76% 54%;
+    --nav-theme-light: 0 78% 60%;
+    --nav-theme-lighter: 0 80% 66%;
 
     --bg: 8 12 20;
     --bg-alt: 15 23 42;
@@ -299,20 +300,30 @@ img {
   display: grid;
   grid-template-columns: 0.85fr 1.15fr;
   gap: 44px;
-  align-items: center;
+  align-items: stretch;
+}
+.about-art {
+  min-height: 320px;
 }
 .about-art img {
   width: 100%;
+  height: 100%;
   border-radius: 16px;
   box-shadow: 0 16px 40px hsl(var(--nav-theme) / 0.16);
   border: 1px solid rgb(var(--border));
-  aspect-ratio: 16 / 9;
   object-fit: cover;
 }
 @media (max-width: 800px) {
   .about-grid {
     grid-template-columns: 1fr;
     gap: 24px;
+  }
+  .about-art {
+    min-height: 0;
+  }
+  .about-art img {
+    height: auto;
+    aspect-ratio: 16 / 9;
   }
 }
 
