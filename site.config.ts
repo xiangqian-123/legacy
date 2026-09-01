@@ -23,7 +23,7 @@ export interface SiteConfig {
 
 export const siteConfig: SiteConfig = {
   siteName: 'Resonance Plague Tale Wiki',
-  siteUrl: 'https://resonance-plague-tale-wiki.vercel.app',
+  siteUrl: 'https://legacy-azure-nine.vercel.app',
   gameName: 'Resonance: A Plague Tale Legacy',
   gaId: process.env.NEXT_PUBLIC_GA_ID || '', // 上线后填入新站的 GA4 衡量 ID（G- 开头）
   defaultTitle: 'Resonance: A Plague Tale Legacy Wiki — 攻略与全收集指南',
