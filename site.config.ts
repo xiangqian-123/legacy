@@ -25,7 +25,7 @@ export const siteConfig: SiteConfig = {
   siteName: 'Resonance Plague Tale Wiki',
   siteUrl: 'https://legacy-azure-nine.vercel.app',
   gameName: 'Resonance: A Plague Tale Legacy',
-  gaId: process.env.NEXT_PUBLIC_GA_ID || '', // 上线后填入新站的 GA4 衡量 ID（G- 开头）
+  gaId: process.env.NEXT_PUBLIC_GA_ID || 'G-SZ5JQSBED1',
   defaultTitle: 'Resonance: A Plague Tale Legacy Wiki — 攻略与全收集指南',
   defaultDescription:
     'Resonance: A Plague Tale Legacy（《瘟疫传说：共鸣》）粉丝攻略站：新手指南、技能加点、全刀剑与护符收集、章节列表、结局解析与中文支持说明。',
