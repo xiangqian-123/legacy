@@ -423,11 +423,6 @@ img {
   margin: 20px 0 8px;
   width: 100%;
 }
-.guide-source {
-  font-size: 0.85rem;
-  color: rgb(var(--text-muted));
-  margin-top: 6px;
-}
 
 /* MDX 正文排版 */
 .prose h2 {

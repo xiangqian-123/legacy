@@ -67,14 +67,6 @@ export default function GuidePage({
             alt={fm.heroAlt || fm.title}
           />
         )}
-        {fm.sourceUrl && (
-          <div className="guide-source">
-            来源：
-            <a href={fm.sourceUrl} target="_blank" rel="noopener noreferrer">
-              {fm.sourceLabel || "官方"}
-            </a>
-          </div>
-        )}
       </header>
       <div className="prose">
         <MDXRemote
