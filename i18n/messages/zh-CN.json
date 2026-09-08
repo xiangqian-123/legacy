@@ -1,10 +1,10 @@
 {
   "nav": {
-    "beginner": "新手入门",
-    "sophia": "主角 Sophia",
+    "chapters": "章节攻略",
+    "resonancePoints": "共鸣点数",
     "charms": "护符收集",
+    "blades": "刀剑收集",
     "skills": "技能加点",
-    "story": "剧情解析",
     "faq": "常见问题"
   },
   "hero": {

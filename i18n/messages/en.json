@@ -1,10 +1,10 @@
 {
   "nav": {
-    "beginner": "Beginner Guide",
-    "sophia": "Sophia",
+    "chapters": "Chapters",
+    "resonancePoints": "Resonance Points",
     "charms": "Charms",
+    "blades": "Blades",
     "skills": "Skills",
-    "story": "Story",
     "faq": "FAQ"
   },
   "hero": {

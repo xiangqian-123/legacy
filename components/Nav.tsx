@@ -4,11 +4,11 @@ import { siteConfig } from "@/lib/site";
 
 // 导航链接：换成新游戏的核心栏目（slug 对应 content/guides 下的 mdx 文件名）。
 const NAV_LINKS = [
-  { slug: "beginner", key: "nav.beginner" },
-  { slug: "sophia", key: "nav.sophia" },
+  { slug: "chapters", key: "nav.chapters" },
+  { slug: "resonance-points", key: "nav.resonancePoints" },
   { slug: "charms", key: "nav.charms" },
+  { slug: "blades", key: "nav.blades" },
   { slug: "skills", key: "nav.skills" },
-  { slug: "story", key: "nav.story" },
   { slug: "faq", key: "nav.faq" },
 ];
 
