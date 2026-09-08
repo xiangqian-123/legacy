@@ -422,6 +422,9 @@ img {
 .guide-hero {
   margin: 20px 0 8px;
   width: 100%;
+  /* height:auto + 标签上的 width/height 让浏览器按真实比例预留空间，避免 CLS。 */
+  height: auto;
+  aspect-ratio: auto;
 }
 
 /* MDX 正文排版 */

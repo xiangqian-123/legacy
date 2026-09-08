@@ -54,6 +54,32 @@ export function getPost(locale: string, slug: string): Post | null {
   return null;
 }
 
+// 某 slug（或全站）实际拥有翻译内容的语言目录。
+// 用于 hreflang / sitemap：只标注真实存在的译文，避免把中文正文标成 en/de/ja/ru
+// （那是重复内容，会让 Google 把中文推给英文用户）。新增译文后自动生效。
+export function getContentLocales(slug?: string): string[] {
+  if (!fs.existsSync(CONTENT_DIR)) return [];
+  return fs
+    .readdirSync(CONTENT_DIR)
+    .filter((d) => {
+      const dir = path.join(CONTENT_DIR, d);
+      if (!fs.statSync(dir).isDirectory()) return false;
+      if (!slug) return true;
+      return fs.existsSync(path.join(dir, `${slug}.mdx`));
+    })
+    .sort();
+}
+
+// 源文最后修改时间（sitemap 的 lastModified，用真实文件时间而非构建时间）。
+export function getPostMtime(locale: string, slug: string): Date {
+  const file = path.join(CONTENT_DIR, locale, `${slug}.mdx`);
+  try {
+    return fs.statSync(file).mtime;
+  } catch {
+    return new Date("2026-09-01");
+  }
+}
+
 // 某语言下的全部文章（用于导航/列表），按 order 排序。
 export function getPostsByLocale(locale: string): Post[] {
   return getSlugs()

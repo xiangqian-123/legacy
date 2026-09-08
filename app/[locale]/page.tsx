@@ -2,6 +2,14 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { isValidLocale } from "@/lib/locales";
 import { getMessages } from "@/lib/i18n";
+import { siteConfig } from "@/lib/site";
+import { getContentLocales, getPostsByLocale } from "@/lib/posts";
+import { IMAGE_DIMS } from "@/lib/imageDims";
+import type { Metadata } from "next";
+
+// 官方发售预告片（Gamescom 2026 ONL 首映，2026-08-25 由 Focus Entertainment 发布）。
+const TRAILER_ID = "ULLFxFm6vvk";
+const TRAILER_UPLOAD_DATE = "2026-08-25";
 
 type Card = { title: string; desc: string; slug: string; img?: string };
 type Fact = { label: string; value: string };
@@ -19,9 +27,6 @@ const CARD_IMAGES: Record<string, string> = {
 const HERO_IMG = "/images/guides/hero.jpg";
 // "What is GameName" 区块左侧配图。
 const ABOUT_IMG = "/images/guides/about.jpg";
-
-// 官方发售预告片（Gamescom 2026 Opening Night Live 首映）。
-const TRAILER_ID = "ULLFxFm6vvk";
 
 function t(messages: Record<string, unknown>, path: string, fb = ""): string {
   const v = path
@@ -49,6 +54,47 @@ function arr(messages: Record<string, unknown>, path: string): string[] {
   return Array.isArray(v) ? (v as string[]) : [];
 }
 
+export function generateMetadata({
+  params,
+}: {
+  params: { locale: string };
+}): Metadata {
+  const locale = params.locale;
+  const m = getMessages(locale);
+  const url = `${siteConfig.siteUrl}/${locale}`;
+  const description = t(m, "hero.description") || siteConfig.defaultDescription;
+  // 只标注真正有译文的语言（+ x-default）；其余语言为 UI 翻译壳页，正文仍是中文。
+  const translated = getContentLocales();
+  const languages: Record<string, string> = Object.fromEntries(
+    translated.map((l) => [l, `${siteConfig.siteUrl}/${l}`])
+  );
+  languages["x-default"] = `${siteConfig.siteUrl}/zh-CN`;
+
+  return {
+    title: siteConfig.defaultTitle,
+    description,
+    alternates: { canonical: url, languages },
+    robots: translated.includes(locale)
+      ? undefined
+      : { index: false, follow: true },
+    openGraph: {
+      type: "website",
+      url,
+      siteName: siteConfig.siteName,
+      title: siteConfig.defaultTitle,
+      description,
+      locale: locale === "zh-TW" ? "zh_TW" : "zh_CN",
+      images: [{ url: `${siteConfig.siteUrl}${HERO_IMG}`, alt: siteConfig.gameName }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: siteConfig.defaultTitle,
+      description,
+      images: [`${siteConfig.siteUrl}${HERO_IMG}`],
+    },
+  };
+}
+
 export default function HomePage({ params }: { params: { locale: string } }) {
   if (!isValidLocale(params.locale)) notFound();
   const m = getMessages(params.locale);
@@ -61,8 +107,61 @@ export default function HomePage({ params }: { params: { locale: string } }) {
     ((m.about as { facts?: Fact[] } | undefined)?.facts) ?? [];
   const paragraphs = arr(m, "about.paragraphs");
 
+  const posts = getPostsByLocale(locale);
+  const homeUrl = `${siteConfig.siteUrl}/${locale}`;
+  const description = t(m, "hero.description") || siteConfig.defaultDescription;
+
+  // 结构化数据：WebSite（站点身份）+ VideoObject（官方预告片）+ ItemList（攻略目录）
+  const websiteJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: siteConfig.siteName,
+    url: homeUrl,
+    description,
+    inLanguage: locale,
+  };
+  const videoJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    name: `${siteConfig.gameName} — Official Launch Trailer`,
+    description: t(m, "trailer.lead") || `${siteConfig.gameName} 官方发售预告片`,
+    thumbnailUrl: [
+      `https://i.ytimg.com/vi/${TRAILER_ID}/maxresdefault.jpg`,
+    ],
+    uploadDate: TRAILER_UPLOAD_DATE,
+    embedUrl: `https://www.youtube.com/embed/${TRAILER_ID}`,
+    publisher: {
+      "@type": "Organization",
+      name: "Focus Entertainment",
+    },
+  };
+  const itemListJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: `${siteConfig.gameName} 攻略目录`,
+    numberOfItems: posts.length,
+    itemListElement: posts.map((p, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: p.frontmatter.title,
+      url: `${siteConfig.siteUrl}/${locale}/guide/${p.slug}`,
+    })),
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
+      />
       {/* Hero */}
       <section className="hero">
         <div className="container hero-grid">
@@ -95,7 +194,12 @@ export default function HomePage({ params }: { params: { locale: string } }) {
             </div>
           </div>
           <div className="hero-art">
-            <img src={HERO_IMG} alt="Resonance: A Plague Tale Legacy 游戏主视觉" />
+            <img
+              src={HERO_IMG}
+              alt="Resonance: A Plague Tale Legacy 游戏主视觉"
+              width={IMAGE_DIMS[HERO_IMG]?.[0]}
+              height={IMAGE_DIMS[HERO_IMG]?.[1]}
+            />
           </div>
         </div>
       </section>
@@ -135,7 +239,14 @@ export default function HomePage({ params }: { params: { locale: string } }) {
       <section className="section section-alt">
         <div className="container about-grid">
           <div className="about-art">
-            <img src={ABOUT_IMG} alt="Resonance: A Plague Tale Legacy 中的角色" />
+            <img
+              src={ABOUT_IMG}
+              alt="Resonance: A Plague Tale Legacy 中的角色"
+              width={IMAGE_DIMS[ABOUT_IMG]?.[0]}
+              height={IMAGE_DIMS[ABOUT_IMG]?.[1]}
+              loading="lazy"
+              decoding="async"
+            />
           </div>
           <div className="about-copy">
             <h2>{t(m, "about.title", "What is GameName")}</h2>
