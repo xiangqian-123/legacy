@@ -117,6 +117,29 @@ img {
 .nav-links a:hover {
   color: hsl(var(--nav-theme));
 }
+/* 移动端：导航横向滚动（7 个栏目一行可滑动），避免换行堆叠。 */
+@media (max-width: 800px) {
+  .nav-inner {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .nav-links {
+    margin-left: 0;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    width: 100%;
+    gap: 16px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .nav-links::-webkit-scrollbar {
+    display: none;
+  }
+  .nav-links a {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+}
 
 /* ---------- Hero ---------- */
 .hero {
@@ -501,6 +524,19 @@ img {
 }
 .prose table tr:nth-child(even) td {
   background: rgb(var(--bg-alt) / 0.5);
+}
+/* 移动端：宽表格（收集品一览等 5-6 列）横向滚动，避免文字被 break-word 硬折断。 */
+@media (max-width: 800px) {
+  .prose table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+  .prose table th,
+  .prose table td {
+    white-space: nowrap;
+  }
 }
 .prose hr {
   border: none;
