@@ -57,6 +57,30 @@ body {
   border-radius: 4px;
 }
 
+/* 404 页面 */
+.notfound {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 96px 24px;
+  text-align: center;
+}
+.notfound-code {
+  font-size: 5rem;
+  font-weight: 900;
+  line-height: 1;
+  color: hsl(var(--nav-theme));
+  letter-spacing: -0.03em;
+}
+.notfound h1 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin: 16px 0 12px;
+}
+.notfound p {
+  color: rgb(var(--text-muted));
+  margin-bottom: 28px;
+}
+
 a {
   color: hsl(var(--nav-theme));
   text-decoration: none;
