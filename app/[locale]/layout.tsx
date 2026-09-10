@@ -21,7 +21,7 @@ export default function LocaleLayout({
 
   return (
     <>
-      <Nav locale={params.locale} messages={messages} />
+      <Nav locale={params.locale} />
       <main>{children}</main>
       <Footer
         locale={params.locale}

@@ -106,25 +106,28 @@ img {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgb(var(--bg) / 0.9);
+  background: rgb(var(--bg) / 0.92);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid rgb(var(--border));
 }
 .nav-inner {
-  max-width: var(--maxw);
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 12px 24px;
+  padding: 0 24px;
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 24px;
+  height: 68px;
 }
 .nav-logo {
   font-weight: 800;
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   color: rgb(var(--text));
   display: flex;
   align-items: center;
   gap: 8px;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 .nav-logo .dot {
   width: 10px;
@@ -134,41 +137,181 @@ img {
   display: inline-block;
 }
 .nav-links {
-  margin-left: auto;
+  flex: 1;
   display: flex;
-  gap: 18px;
+  gap: 2px;
   align-items: center;
-  flex-wrap: wrap;
+  justify-content: center;
 }
-.nav-links a {
+.nav-link,
+.nav-item-btn {
   color: rgb(var(--text-muted));
   font-weight: 500;
   font-size: 0.95rem;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: color 0.15s;
 }
-.nav-links a:hover {
+.nav-link:hover,
+.nav-item-btn:hover {
   color: hsl(var(--nav-theme));
 }
-/* 移动端：导航横向滚动（7 个栏目一行可滑动），避免换行堆叠。 */
+.nav-item {
+  position: relative;
+}
+.nav-item-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: inherit;
+}
+.caret {
+  font-size: 0.7rem;
+  opacity: 0.6;
+}
+.nav-dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 220px;
+  background: rgb(var(--bg));
+  border: 1px solid rgb(var(--border));
+  border-radius: 12px;
+  box-shadow: 0 16px 40px rgb(0 0 0 / 0.14);
+  padding: 8px;
+  z-index: 60;
+}
+.nav-dropdown.open {
+  display: block;
+}
+.nav-dropdown a {
+  display: block;
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: rgb(var(--text));
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+.nav-dropdown a:hover {
+  background: rgb(var(--bg-alt));
+  color: hsl(var(--nav-theme));
+  text-decoration: none;
+}
+.nav-sub {
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px solid rgb(var(--border));
+}
+.nav-sub-title {
+  display: block;
+  font-size: 0.72rem;
+  color: rgb(var(--text-muted));
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 4px 12px;
+}
+.nav-sub-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+.nav-sub-list a {
+  font-size: 0.82rem;
+  padding: 6px 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* 语言切换 */
+.lang {
+  position: relative;
+  flex-shrink: 0;
+}
+.lang summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 8px 10px;
+  border: 1px solid rgb(var(--border));
+  border-radius: 8px;
+  color: rgb(var(--text-muted));
+  font-weight: 500;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.lang summary::-webkit-details-marker {
+  display: none;
+}
+.lang-list {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 120px;
+  background: rgb(var(--bg));
+  border: 1px solid rgb(var(--border));
+  border-radius: 12px;
+  box-shadow: 0 16px 40px rgb(0 0 0 / 0.14);
+  padding: 8px;
+  z-index: 60;
+}
+.lang-list a {
+  display: block;
+  padding: 6px 12px;
+  border-radius: 8px;
+  color: rgb(var(--text));
+  font-size: 0.9rem;
+}
+.lang-list a:hover {
+  background: rgb(var(--bg-alt));
+  text-decoration: none;
+}
+/* 移动端：一级导航横向滚动，下拉改 accordion */
 @media (max-width: 800px) {
   .nav-inner {
+    height: auto;
+    min-height: 56px;
     flex-wrap: wrap;
     gap: 8px;
+    padding: 8px 16px;
   }
   .nav-links {
-    margin-left: 0;
-    flex-wrap: nowrap;
-    overflow-x: auto;
+    flex: none;
     width: 100%;
-    gap: 16px;
+    justify-content: flex-start;
+    overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
+    order: 2;
   }
   .nav-links::-webkit-scrollbar {
     display: none;
   }
-  .nav-links a {
-    white-space: nowrap;
-    flex-shrink: 0;
+  .lang {
+    margin-left: auto;
+  }
+  .nav-dropdown {
+    position: static;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    padding: 0 0 4px 8px;
+    min-width: 0;
+  }
+  .nav-dropdown.open {
+    display: block;
+  }
+  .nav-sub-list {
+    grid-template-columns: 1fr;
+    max-height: none;
   }
 }
 
