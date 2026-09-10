@@ -1,80 +1,156 @@
 {
+  "meta": {
+    "title": "Resonance: A Plague Tale Legacy 攻略 Wiki｜全流程・谜题・全收集",
+    "description": "Resonance: A Plague Tale Legacy（瘟疫传说：共鸣）攻略站：14章全流程、谜题答案、275项收集、共鸣点数、刀剑、护符、奖杯与技能攻略。"
+  },
   "nav": {
-    "chapters": "章节攻略",
-    "puzzles": "谜题解法",
-    "resonancePoints": "共鸣点数",
-    "charms": "护符收集",
-    "blades": "刀剑收集",
-    "skills": "技能加点",
-    "faq": "常见问题"
+    "walkthrough": "攻略",
+    "collectibles": "全收集",
+    "puzzles": "谜题",
+    "trophies": "奖杯成就",
+    "skills": "技能",
+    "story": "剧情",
+    "more": "更多",
+    "fullWalkthrough": "完整流程攻略",
+    "beginnerGuide": "新手攻略",
+    "allChapters": "所有章节",
+    "resonancePoints": "共鸣点数 Resonance Points",
+    "blades": "刀剑 Blades",
+    "artefacts": "遗物 Artefacts",
+    "charms": "护符 Charms",
+    "theseusEchoes": "忒修斯回响 Theseus Echoes",
+    "storyGuide": "剧情解析",
+    "endingExplained": "结局解释",
+    "sophia": "Sophia",
+    "faq": "常见问题",
+    "gameInfo": "游戏信息",
+    "languageSupport": "语言支持"
   },
   "hero": {
-    "eyebrow": "Fan-Made Community Wiki",
-    "title": "Resonance: A Plague Tale Legacy",
-    "description": "《瘟疫传说》系列前传：年轻劫掠者 Sophia 闯入米诺陶洛斯岛，在米诺斯时代的回响中揭开 Macula 的起源。战斗、解谜、全收集，一站搞定。",
-    "stats": [
-      "2026 年 8 月 27 日发售",
-      "PS5 / Xbox Series X|S / PC",
-      "首日加入 Xbox Game Pass",
-      "支持简繁中文全语音",
-      "14 章 · 12-14 小时通关",
-      "Metascore 78 · 玩家分 8.1"
-    ],
-    "ctaPrimary": "开始新手攻略",
-    "ctaSecondary": "查看评测汇总",
-    "ctaThird": "观看发售预告片",
-    "videoLabel": "官方预告片"
+    "title": "Resonance: A Plague Tale Legacy 攻略 Wiki",
+    "tagline": "14章完整流程、谜题答案、275项收集、共鸣点数、刀剑、护符、奖杯与技能攻略。",
+    "ctaWalkthrough": "开始完整攻略",
+    "ctaCollectibles": "查看全收集",
+    "ctaPuzzles": "卡关了？直接找谜题答案 →"
   },
-  "startHere": {
-    "title": "从这里开始",
-    "lead": "四个核心入口，快速定位你要找的内容。",
-    "cards": [
-      {
-        "title": "Beginner Guide 新手入门",
-        "desc": "战斗、解谜、收集一条线讲透：开荒路线、招架与专注攻击、别错过的 Resonance 点数。",
-        "slug": "beginner"
-      },
-      {
-        "title": "Sophia 主角专题",
-        "desc": "前传主角 Sophia 与系列的联系：劫掠者出身、双时间线、忒修斯的回响。",
-        "slug": "sophia"
-      },
-      {
-        "title": "Charms 护符全收集",
-        "desc": "30 个护符逐章位置图解：6 类被动效果、5 个穿孔钱币碗、关联奖杯速查。",
-        "slug": "charms"
-      },
-      {
-        "title": "Skills 技能加点",
-        "desc": "200 点 Resonance 点数怎么花：五技能评测、三条 build 路线、免费洗点机制。",
-        "slug": "skills"
-      }
+  "search": {
+    "placeholder": "搜索章节、谜题、护符、刀剑、共鸣点数……",
+    "empty": "没有匹配结果，试试「刀剑」「共鸣点」「chapter 4」",
+    "ariaLabel": "站内搜索"
+  },
+  "tasks": {
+    "title": "你现在要找什么？",
+    "walkthrough": {
+      "title": "完整流程攻略",
+      "desc": "14 个章节逐章攻略",
+      "sub": "主线 · 卡关 · Boss · 谜题 · 收集",
+      "cta": "查看 14 章攻略 →"
+    },
+    "collectibles": {
+      "title": "全收集",
+      "desc": "275 项收集内容",
+      "sub": "共鸣点 · 刀剑 · 遗物 · 护符 · 忒修斯回响",
+      "cta": "查看全收集 →"
+    },
+    "puzzles": {
+      "title": "谜题答案",
+      "desc": "卡住直接找答案",
+      "sub": "光线 · 球体 · 符文 · 英雄墓",
+      "cta": "解决谜题 →"
+    },
+    "trophies": {
+      "title": "奖杯与成就",
+      "desc": "白金路线与易漏项目",
+      "sub": "收集 · 战斗 · 章节奖杯",
+      "cta": "查看奖杯攻略 →"
+    }
+  },
+  "warning": {
+    "title": "⚠ 一周目最容易漏掉：Resonance Points",
+    "body": "全游戏共有 {total} 个 Resonance Points，解锁全部技能相关目标需要至少 {required} 点。不要把它当成普通收集物留到章节选择再补。",
+    "cta": "查看 Resonance Points 安全收集路线 →"
+  },
+  "chaptersSection": {
+    "title": "14章完整流程攻略",
+    "lead": "按主线顺序查看流程、谜题、收集物和关键战斗。"
+  },
+  "chapters": {
+    "chapter-1-blood-ties": { "localName": "血缘", "tag": "剧情章节" },
+    "chapter-2-felons": { "localName": "罪徒", "tag": "收集较多" },
+    "chapter-3-those-before-us": { "localName": "先民", "tag": "收集较多" },
+    "chapter-4-from-hell-it-rose": { "localName": "出自地狱", "tag": "谜题较多" },
+    "chapter-5-desolation-it-wrought": { "localName": "荒芜", "tag": "谜题较多" },
+    "chapter-6-what-lies-beneath": { "localName": "深藏之物", "tag": "收集较多" },
+    "chapter-7-death-it-sowed": { "localName": "死亡播种", "tag": "谜题较多" },
+    "chapter-8-resonance": { "localName": "共鸣", "tag": "无收集" },
+    "chapter-9-night-has-come": { "localName": "黑夜降临", "tag": "收集较多" },
+    "chapter-10-parallel-paths": { "localName": "平行之路", "tag": "谜题较多" },
+    "chapter-11-patera": { "localName": "帕特拉", "tag": "谜题较多" },
+    "chapter-12-fading-light": { "localName": "消逝之光", "tag": "剧情章节" },
+    "chapter-13-as-one": { "localName": "合而为一", "tag": "Boss" },
+    "chapter-14-what-remains": { "localName": "余存", "tag": "无收集" }
+  },
+  "collectiblesSection": {
+    "title": "全收集攻略",
+    "cta": "查看位置 →"
+  },
+  "collectibles": {
+    "resonance-points": { "note": "一周目重点" },
+    "blades": { "note": "全部英雄墓刀剑" },
+    "artefacts": { "note": "过去与现在的遗物" },
+    "charms": { "note": "全部护符" },
+    "theseus-echoes": { "note": "忒修斯回响" }
+  },
+  "puzzlesSection": {
+    "title": "谜题答案",
+    "cta": "查看答案 →"
+  },
+  "puzzles": [
+    { "ch": "Chapter 4", "name": "三符号谜题", "desc": "照基座看墙上符号，旋转对齐" },
+    { "ch": "Chapter 4", "name": "公牛镜谜题", "desc": "镜子两两对齐符号" },
+    { "ch": "Chapter 5", "name": "雕像门谜题", "desc": "三色光对齐雕像宝石" },
+    { "ch": "Chapter 7", "name": "黑神庙颅骨门", "desc": "按绿点提示顺序按颅骨" },
+    { "ch": "Chapter 10", "name": "门谜题（三基座）", "desc": "反射光到门，对齐 6 符号" },
+    { "ch": "Chapter 11", "name": "光束谜题", "desc": "杠杆接光融化灰尘" }
+  ],
+  "trophiesSection": {
+    "title": "奖杯与成就",
+    "items": [
+      { "title": "全奖杯攻略", "desc": "36 成就 + 白金路线" },
+      { "title": "易错过奖杯", "desc": "Sea You Later / 木偶剧等" },
+      { "title": "收集类奖杯", "desc": "Hoarder / Plunderer" },
+      { "title": "战斗类奖杯", "desc": "Untouchable 等 12 个" }
+    ]
+  },
+  "skillsSection": {
+    "title": "技能与 Build",
+    "items": [
+      { "title": "最佳技能", "desc": "Aegean Deflect / Hero's Step" },
+      { "title": "最佳 Build", "desc": "招架流 / 闪避流 / 专注流" },
+      { "title": "Resonance Points 怎么花", "desc": "165 点点满 6 分支" }
+    ]
+  },
+  "storySection": {
+    "title": "剧情与结局",
+    "spoiler": "⚠ 以下内容包含剧透",
+    "items": [
+      { "title": "结局解释", "desc": "生物、Macula 与留白" },
+      { "title": "Sophia", "desc": "主角起源与动机" },
+      { "title": "剧情解析", "desc": "完整故事时间线" }
+    ]
+  },
+  "beginnerSection": {
+    "items": [
+      { "title": "新手攻略", "desc": "战斗、解谜与收集避坑" },
+      { "title": "常见问题", "desc": "15 个高频问题一次答完" }
     ]
   },
   "about": {
-    "title": "什么是 Resonance: A Plague Tale Legacy",
-    "paragraphs": [
-      "Resonance: A Plague Tale Legacy《瘟疫传说：共鸣》是由 Asobo Studio 开发、Focus Entertainment 发行的动作冒险游戏，2026 年 8 月 27 日发售，是《瘟疫传说：安魂曲》的前传。玩家扮演年轻劫掠者 Sophia，闯入遍布致命试炼的米诺陶洛斯岛，追寻父亲死前追逐的失落宝藏。",
-      "本作大胆转型：动态近战取代潜行压制，光束反射谜题全面进化。随着探索深入，Sophia 不断闪回米诺斯时代，亲身经历传奇英雄忒修斯 Theseus 的残酷试炼，在跨越 2000 年的双时间线中逼近 Macula 疫病的起源。"
-    ],
-    "facts": [
-      { "label": "Developer", "value": "Asobo Studio" },
-      { "label": "Publisher", "value": "Focus Entertainment" },
-      { "label": "Platform", "value": "PS5 / Xbox Series X|S / PC" },
-      { "label": "Genre", "value": "Action Adventure 动作冒险" },
-      { "label": "Release", "value": "2026-08-27" },
-      { "label": "Price", "value": "$49.99 (PC) / $59.99 (主机)" }
-    ]
+    "title": "关于 Resonance: A Plague Tale Legacy",
+    "lead": "瘟疫传说系列前传，设定在《安魂曲》15 年前。年轻劫掠者 Sophia 闯入米诺陶洛斯岛，在米诺斯时代的回响中揭开 Macula 的起源。战斗、解谜、全收集，一站搞定。"
   },
   "trailer": {
-    "title": "官方发售预告片",
-    "lead": "Gamescom 2026 开幕夜首映：以 Depeche Mode《Enjoy the Silence》翻唱配乐，讲述失落、背叛与命运。"
-  },
-  "cta": {
-    "title": "准备好踏上 Sophia 的旅程了吗？",
-    "description": "从第一次挥剑到 Macula 的真相，这个粉丝 Wiki 覆盖了你需要的一切：新手指南、技能 build、护符与刀剑全收集、结局解析。",
-    "primary": "阅读新手攻略",
-    "secondary": "在 Steam 上查看"
+    "title": "官方预告片"
   },
   "footer": {
     "aboutTitle": "Resonance Plague Tale Wiki",

@@ -6,7 +6,7 @@ import { siteConfig } from "@/lib/site";
 
 type NavLink = { label: string; slug: string };
 
-// 14 章（slug 对应 content/guides 下的 mdx 文件名）
+// 14 章（slug 对应 content/guides 下的 mdx 文件名；章节名为游戏内官方英文名，全语言通用）
 const CHAPTERS: NavLink[] = [
   { label: "Chapter 1 · Blood Ties", slug: "chapter-1-blood-ties" },
   { label: "Chapter 2 · Felons", slug: "chapter-2-felons" },
@@ -24,51 +24,53 @@ const CHAPTERS: NavLink[] = [
   { label: "Chapter 14 · What Remains", slug: "chapter-14-what-remains" },
 ];
 
+// 导航结构：key 对应 messages.nav 下的文案，slug/href 是路由。
+type NavChild = { key: string; slug: string };
 type NavItem = {
-  label: string;
+  key: string; // messages.nav 下的文案 key
   href?: string; // 直接链接（无下拉）
-  children?: NavLink[]; // 下拉项
-  grandTitle?: string; // 二级标题（如「所有章节」）
-  grand?: NavLink[]; // 二级项
+  children?: NavChild[]; // 下拉项
+  grandTitleKey?: string; // 二级标题的文案 key（如「所有章节」）
+  grand?: NavLink[]; // 二级项（章节）
 };
 
 const NAV: NavItem[] = [
   {
-    label: "攻略",
+    key: "walkthrough",
     children: [
-      { label: "完整流程攻略", slug: "chapters" },
-      { label: "新手攻略", slug: "beginner" },
+      { key: "fullWalkthrough", slug: "chapters" },
+      { key: "beginnerGuide", slug: "beginner" },
     ],
-    grandTitle: "所有章节",
+    grandTitleKey: "allChapters",
     grand: CHAPTERS,
   },
   {
-    label: "全收集",
+    key: "collectibles",
     children: [
-      { label: "共鸣点数 Resonance Points", slug: "resonance-points" },
-      { label: "刀剑 Blades", slug: "blades" },
-      { label: "遗物 Artefacts", slug: "artefacts" },
-      { label: "护符 Charms", slug: "charms" },
-      { label: "忒修斯回响 Theseus Echoes", slug: "theseus-echoes" },
+      { key: "resonancePoints", slug: "resonance-points" },
+      { key: "blades", slug: "blades" },
+      { key: "artefacts", slug: "artefacts" },
+      { key: "charms", slug: "charms" },
+      { key: "theseusEchoes", slug: "theseus-echoes" },
     ],
   },
-  { label: "谜题", href: "puzzles" },
-  { label: "奖杯成就", href: "achievements" },
-  { label: "技能", href: "skills" },
+  { key: "puzzles", href: "puzzles" },
+  { key: "trophies", href: "achievements" },
+  { key: "skills", href: "skills" },
   {
-    label: "剧情",
+    key: "story",
     children: [
-      { label: "剧情解析", slug: "story" },
-      { label: "结局解释", slug: "ending" },
-      { label: "Sophia", slug: "sophia" },
+      { key: "storyGuide", slug: "story" },
+      { key: "endingExplained", slug: "ending" },
+      { key: "sophia", slug: "sophia" },
     ],
   },
   {
-    label: "更多",
+    key: "more",
     children: [
-      { label: "常见问题", slug: "faq" },
-      { label: "游戏信息", slug: "wiki" },
-      { label: "语言支持", slug: "chinese" },
+      { key: "faq", slug: "faq" },
+      { key: "gameInfo", slug: "wiki" },
+      { key: "languageSupport", slug: "chinese" },
     ],
   },
 ];
@@ -85,12 +87,20 @@ const LANG_LABELS: Record<string, string> = {
 export default function Nav({
   locale,
   contentLocales,
+  messages,
 }: {
   locale: string;
   contentLocales: string[];
+  messages: Record<string, unknown>;
 }) {
   const [hover, setHover] = useState<string | null>(null); // 桌面 hover
   const [mobileOpen, setMobileOpen] = useState<string | null>(null); // 移动端点击
+
+  const nav = (messages.nav ?? {}) as Record<string, unknown>;
+  const t = (key: string): string => {
+    const v = nav[key];
+    return typeof v === "string" ? v : key;
+  };
 
   return (
     <header className="nav">
@@ -101,24 +111,25 @@ export default function Nav({
         </Link>
         <nav className="nav-links">
           {NAV.map((item) => {
+            const label = t(item.key);
             // 直接链接（无下拉）
             if (item.href && !item.children) {
               return (
                 <Link
-                  key={item.label}
+                  key={item.key}
                   className="nav-link"
                   href={`/${locale}/guide/${item.href}`}
                 >
-                  {item.label}
+                  {label}
                 </Link>
               );
             }
-            const isOpen = hover === item.label || mobileOpen === item.label;
+            const isOpen = hover === item.key || mobileOpen === item.key;
             return (
               <div
-                key={item.label}
+                key={item.key}
                 className="nav-item"
-                onMouseEnter={() => setHover(item.label)}
+                onMouseEnter={() => setHover(item.key)}
                 onMouseLeave={() => setHover(null)}
               >
                 <button
@@ -126,10 +137,10 @@ export default function Nav({
                   className="nav-item-btn"
                   aria-expanded={isOpen}
                   onClick={() =>
-                    setMobileOpen(mobileOpen === item.label ? null : item.label)
+                    setMobileOpen(mobileOpen === item.key ? null : item.key)
                   }
                 >
-                  {item.label}
+                  {label}
                   <span className="caret" aria-hidden>
                     ▾
                   </span>
@@ -137,12 +148,14 @@ export default function Nav({
                 <div className={`nav-dropdown${isOpen ? " open" : ""}`}>
                   {item.children?.map((c) => (
                     <Link key={c.slug} href={`/${locale}/guide/${c.slug}`}>
-                      {c.label}
+                      {t(c.key)}
                     </Link>
                   ))}
                   {item.grand && (
                     <div className="nav-sub">
-                      <span className="nav-sub-title">{item.grandTitle}</span>
+                      <span className="nav-sub-title">
+                        {item.grandTitleKey ? t(item.grandTitleKey) : ""}
+                      </span>
                       <div className="nav-sub-list">
                         {item.grand.map((c) => (
                           <Link key={c.slug} href={`/${locale}/guide/${c.slug}`}>

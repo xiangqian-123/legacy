@@ -22,7 +22,11 @@ export default function LocaleLayout({
 
   return (
     <>
-      <Nav locale={params.locale} contentLocales={getContentLocales()} />
+      <Nav
+        locale={params.locale}
+        contentLocales={getContentLocales()}
+        messages={messages}
+      />
       <main>{children}</main>
       <Footer
         locale={params.locale}

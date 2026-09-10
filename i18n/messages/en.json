@@ -1,80 +1,156 @@
 {
+  "meta": {
+    "title": "Resonance: A Plague Tale Legacy Wiki | Walkthrough, Puzzles & Collectibles",
+    "description": "Full 14-chapter walkthrough, puzzle solutions, all 275 collectibles, Resonance Points, blades, charms, trophies and skill guides for Resonance: A Plague Tale Legacy."
+  },
   "nav": {
-    "chapters": "Chapters",
+    "walkthrough": "Walkthrough",
+    "collectibles": "Collectibles",
     "puzzles": "Puzzles",
-    "resonancePoints": "Resonance Points",
-    "charms": "Charms",
-    "blades": "Blades",
+    "trophies": "Trophies",
     "skills": "Skills",
-    "faq": "FAQ"
+    "story": "Story",
+    "more": "More",
+    "fullWalkthrough": "Full Walkthrough",
+    "beginnerGuide": "Beginner Guide",
+    "allChapters": "All Chapters",
+    "resonancePoints": "Resonance Points",
+    "blades": "Blades",
+    "artefacts": "Artefacts",
+    "charms": "Charms",
+    "theseusEchoes": "Theseus Echoes",
+    "storyGuide": "Story Guide",
+    "endingExplained": "Ending Explained",
+    "sophia": "Sophia",
+    "faq": "FAQ",
+    "gameInfo": "Game Info",
+    "languageSupport": "Language Support"
   },
   "hero": {
-    "eyebrow": "Fan-Made Community Wiki",
-    "title": "Resonance: A Plague Tale Legacy",
-    "description": "The Plague Tale prequel: young plunderer Sophia braves Minotaur Island and uncovers the origins of the Macula across a dual timeline. Combat, puzzles, and full collectible guides.",
-    "stats": [
-      "Released Aug 27, 2026",
-      "PS5 / Xbox Series X|S / PC",
-      "Day One on Xbox Game Pass",
-      "Full Simplified Chinese Audio",
-      "14 Chapters · 12-14 Hours",
-      "Metascore 78 · User Score 8.1"
-    ],
-    "ctaPrimary": "Start Beginner Guide",
-    "ctaSecondary": "Read Reviews",
-    "ctaThird": "Watch Launch Trailer",
-    "videoLabel": "Official Trailer"
+    "title": "Resonance: A Plague Tale Legacy Wiki",
+    "tagline": "Full 14-chapter walkthrough, puzzle solutions, all 275 collectibles, Resonance Points, blades, charms, trophies and skill guides.",
+    "ctaWalkthrough": "Start Full Walkthrough",
+    "ctaCollectibles": "View All Collectibles",
+    "ctaPuzzles": "Stuck? Jump straight to puzzle solutions →"
   },
-  "startHere": {
-    "title": "Start Here",
-    "lead": "Four entry points to jump straight to what you need.",
-    "cards": [
-      {
-        "title": "Beginner Guide",
-        "desc": "Combat, puzzles and collectibles in one line: opening route, parries, Focus Attacks, and the Resonance Points you should never miss.",
-        "slug": "beginner"
-      },
-      {
-        "title": "Sophia, the Plunderer",
-        "desc": "The prequel protagonist and her ties to the series: her raider past, the dual timeline, and the echo of Theseus.",
-        "slug": "sophia"
-      },
-      {
-        "title": "All Charm Locations",
-        "desc": "All 30 charms chapter by chapter: 6 effect types, the 5 Pierced Coin bowls, and linked trophies.",
-        "slug": "charms"
-      },
-      {
-        "title": "Skills & Builds",
-        "desc": "How to spend 200 Resonance Points: all five skills rated, three build routes, and free respec.",
-        "slug": "skills"
-      }
+  "search": {
+    "placeholder": "Search chapters, puzzles, charms, blades, Resonance Points…",
+    "empty": "No matches — try \"blade\", \"resonance point\", or \"chapter 4\"",
+    "ariaLabel": "Site search"
+  },
+  "tasks": {
+    "title": "What are you looking for?",
+    "walkthrough": {
+      "title": "Full Walkthrough",
+      "desc": "All 14 chapters step by step",
+      "sub": "Story · Unstuck · Boss · Puzzles · Collectibles",
+      "cta": "View 14 Chapters →"
+    },
+    "collectibles": {
+      "title": "All Collectibles",
+      "desc": "275 tracked items",
+      "sub": "Points · Blades · Artefacts · Charms · Echoes",
+      "cta": "View Collectibles →"
+    },
+    "puzzles": {
+      "title": "Puzzle Solutions",
+      "desc": "Stuck? Get answers fast",
+      "sub": "Light · Sphere · Rune · Hero Tomb",
+      "cta": "Solve Puzzles →"
+    },
+    "trophies": {
+      "title": "Trophies & Achievements",
+      "desc": "Platinum route & missables",
+      "sub": "Collect · Combat · Chapter",
+      "cta": "View Trophy Guide →"
+    }
+  },
+  "warning": {
+    "title": "⚠ Easiest to miss on a first run: Resonance Points",
+    "body": "The game has {total} Resonance Points. Unlocking all skills needs at least {required}. Don't treat them like ordinary collectibles and leave them for chapter select.",
+    "cta": "View the safe Resonance Points route →"
+  },
+  "chaptersSection": {
+    "title": "Full 14-Chapter Walkthrough",
+    "lead": "Routes, puzzles, collectibles and key fights, in main-story order."
+  },
+  "chapters": {
+    "chapter-1-blood-ties": { "tag": "Story chapter" },
+    "chapter-2-felons": { "tag": "Collectible-rich" },
+    "chapter-3-those-before-us": { "tag": "Collectible-rich" },
+    "chapter-4-from-hell-it-rose": { "tag": "Puzzle-heavy" },
+    "chapter-5-desolation-it-wrought": { "tag": "Puzzle-heavy" },
+    "chapter-6-what-lies-beneath": { "tag": "Collectible-rich" },
+    "chapter-7-death-it-sowed": { "tag": "Puzzle-heavy" },
+    "chapter-8-resonance": { "tag": "No collectibles" },
+    "chapter-9-night-has-come": { "tag": "Collectible-rich" },
+    "chapter-10-parallel-paths": { "tag": "Puzzle-heavy" },
+    "chapter-11-patera": { "tag": "Puzzle-heavy" },
+    "chapter-12-fading-light": { "tag": "Story chapter" },
+    "chapter-13-as-one": { "tag": "Boss" },
+    "chapter-14-what-remains": { "tag": "No collectibles" }
+  },
+  "collectiblesSection": {
+    "title": "All Collectibles",
+    "cta": "View locations →"
+  },
+  "collectibles": {
+    "resonance-points": { "note": "First-run priority" },
+    "blades": { "note": "All Hero Tomb blades" },
+    "artefacts": { "note": "Relics of past & present" },
+    "charms": { "note": "All 30 charms" },
+    "theseus-echoes": { "note": "The 5 echoes" }
+  },
+  "puzzlesSection": {
+    "title": "Puzzle Solutions",
+    "cta": "View solution →"
+  },
+  "puzzles": [
+    { "ch": "Chapter 4", "name": "Three-Symbol Puzzle", "desc": "Read the wall symbols, rotate the pedestal to match" },
+    { "ch": "Chapter 4", "name": "Bull Mirror Puzzle", "desc": "Line the mirrors up with the symbols" },
+    { "ch": "Chapter 5", "name": "Statue Door Puzzle", "desc": "Match three light colors to the statue gems" },
+    { "ch": "Chapter 7", "name": "Black Temple Skull Door", "desc": "Press the skulls in the green-dot order" },
+    { "ch": "Chapter 10", "name": "Door Puzzle (Three Pedestals)", "desc": "Reflect light to the door, align all 6 symbols" },
+    { "ch": "Chapter 11", "name": "Light Beam Puzzle", "desc": "Chain levers to carry light and melt the dust" }
+  ],
+  "trophiesSection": {
+    "title": "Trophies & Achievements",
+    "items": [
+      { "title": "Trophy Guide", "desc": "36 achievements + platinum route" },
+      { "title": "Missable Trophies", "desc": "Sea You Later / Theater Enthusiast" },
+      { "title": "Collectible Trophies", "desc": "Hoarder / Plunderer" },
+      { "title": "Combat Trophies", "desc": "Untouchable + 11 more" }
+    ]
+  },
+  "skillsSection": {
+    "title": "Skills & Builds",
+    "items": [
+      { "title": "Best Skills", "desc": "Aegean Deflect / Hero's Step" },
+      { "title": "Best Build", "desc": "Parry / Dodge / Focus routes" },
+      { "title": "How to spend Points", "desc": "165 points to max all 6 branches" }
+    ]
+  },
+  "storySection": {
+    "title": "Story & Ending",
+    "spoiler": "⚠ Contains spoilers",
+    "items": [
+      { "title": "Ending Explained", "desc": "The creature, the Macula, the ambiguity" },
+      { "title": "Sophia", "desc": "The protagonist's origins & motives" },
+      { "title": "Story Guide", "desc": "The full timeline explained" }
+    ]
+  },
+  "beginnerSection": {
+    "items": [
+      { "title": "Beginner Guide", "desc": "Combat, puzzles & collectible pitfalls" },
+      { "title": "FAQ", "desc": "15 common questions answered" }
     ]
   },
   "about": {
-    "title": "What is Resonance: A Plague Tale Legacy",
-    "paragraphs": [
-      "Resonance: A Plague Tale Legacy is an action-adventure game developed by Asobo Studio and published by Focus Entertainment, released on August 27, 2026 — a prequel to A Plague Tale: Requiem. You play as Sophia, a young plunderer who braves the trial-ridden Minotaur Island in search of the lost treasure her late father chased.",
-      "The game reinvents the formula: dynamic melee combat replaces stealth-heavy encounters, and light-reflection puzzles reach new heights. As Sophia descends, she experiences flashbacks to the Minoan era — living the brutal trials of the legendary hero Theseus across a dual timeline spanning 2,000 years, closing in on the very origins of the Macula."
-    ],
-    "facts": [
-      { "label": "Developer", "value": "Asobo Studio" },
-      { "label": "Publisher", "value": "Focus Entertainment" },
-      { "label": "Platform", "value": "PS5 / Xbox Series X|S / PC" },
-      { "label": "Genre", "value": "Action Adventure" },
-      { "label": "Release", "value": "Aug 27, 2026" },
-      { "label": "Price", "value": "$49.99 (PC) / $59.99 (Console)" }
-    ]
+    "title": "About Resonance: A Plague Tale Legacy",
+    "lead": "The Plague Tale prequel, set 15 years before Requiem. Young plunderer Sophia braves Minotaur Island and uncovers the origins of the Macula through echoes of the Minoan age. Combat, puzzles and full collectibles — all in one place."
   },
   "trailer": {
-    "title": "Official Launch Trailer",
-    "lead": "Premiered at Gamescom 2026 Opening Night Live — a reinterpretation of Depeche Mode's Enjoy the Silence, exploring loss, betrayal and destiny."
-  },
-  "cta": {
-    "title": "Ready to Begin Sophia's Journey?",
-    "description": "From your first sword swing to the truth of the Macula, this fan wiki covers it all: beginner guides, skill builds, full charm and blade collections, and the ending explained.",
-    "primary": "Read the Beginner Guide",
-    "secondary": "Play on Steam"
+    "title": "Official Trailer"
   },
   "footer": {
     "aboutTitle": "Resonance Plague Tale Wiki",
