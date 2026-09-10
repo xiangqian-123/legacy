@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { isValidLocale, locales } from "@/lib/locales";
 import { getMessages } from "@/lib/i18n";
 import { siteConfig } from "@/lib/site";
+import { getContentLocales } from "@/lib/posts";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 
@@ -21,7 +22,7 @@ export default function LocaleLayout({
 
   return (
     <>
-      <Nav locale={params.locale} />
+      <Nav locale={params.locale} contentLocales={getContentLocales()} />
       <main>{children}</main>
       <Footer
         locale={params.locale}

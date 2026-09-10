@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { locales } from "@/lib/locales";
 import { siteConfig } from "@/lib/site";
 
 type NavLink = { label: string; slug: string };
@@ -83,7 +82,13 @@ const LANG_LABELS: Record<string, string> = {
   de: "DE",
 };
 
-export default function Nav({ locale }: { locale: string }) {
+export default function Nav({
+  locale,
+  contentLocales,
+}: {
+  locale: string;
+  contentLocales: string[];
+}) {
   const [hover, setHover] = useState<string | null>(null); // 桌面 hover
   const [mobileOpen, setMobileOpen] = useState<string | null>(null); // 移动端点击
 
@@ -155,9 +160,9 @@ export default function Nav({ locale }: { locale: string }) {
         <details className="lang">
           <summary>{LANG_LABELS[locale] ?? locale}</summary>
           <div className="lang-list">
-            {locales.map((l) => (
+            {contentLocales.map((l) => (
               <Link key={l} href={`/${l}`}>
-                {LANG_LABELS[l]}
+                {LANG_LABELS[l] ?? l}
               </Link>
             ))}
           </div>
