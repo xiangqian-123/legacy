@@ -5,6 +5,7 @@ import { siteConfig } from "@/lib/site";
 import { getContentLocales, getPostsByLocale } from "@/lib/posts";
 import { GAME_DATA, COLLECTIBLE_TOTAL } from "@/lib/game-data";
 import Search from "@/components/Search";
+import VideoThumb from "@/components/VideoThumb";
 import type { Metadata } from "next";
 
 // 官方发售预告片（Gamescom 2026 ONL 首映，2026-08-25 由 Focus Entertainment 发布）。
@@ -382,15 +383,10 @@ export default function HomePage({ params }: { params: { locale: string } }) {
       <section className="section section-alt">
         <div className="container">
           <h2 className="section-title">官方预告片</h2>
-          <div className="video">
-            <iframe
-              src={`https://www.youtube.com/embed/${TRAILER_ID}`}
-              title="Resonance: A Plague Tale Legacy Official Launch Trailer"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              loading="lazy"
-            />
-          </div>
+          <VideoThumb
+            videoId={TRAILER_ID}
+            title="Resonance: A Plague Tale Legacy Official Launch Trailer"
+          />
           <div className="official-links">
             <a href="https://store.steampowered.com/app/2713000/" target="_blank" rel="noopener noreferrer">Steam</a>
             <a href="https://www.focus-entmt.com/en/games/resonance-a-plague-tale-legacy" target="_blank" rel="noopener noreferrer">Official Site</a>

@@ -1310,3 +1310,46 @@ img {
     color: rgb(var(--text-muted));
   }
 }
+
+/* ============ 预告片缩略图 + 播放按钮（第54步） ============ */
+.video-thumb {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  border: none;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.video-thumb img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 16px;
+  display: block;
+}
+.play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: hsl(var(--nav-theme));
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.3);
+  transition: transform 0.15s;
+}
+.video-thumb:hover .play-btn {
+  transform: translate(-50%, -50%) scale(1.08);
+}
