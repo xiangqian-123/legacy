@@ -9,6 +9,7 @@ import { locales } from "@/lib/locales";
 import { siteConfig } from "@/lib/site";
 import { IMAGE_DIMS } from "@/lib/imageDims";
 import { CHAPTERS } from "@/lib/chapters";
+import Toc from "@/components/Toc";
 import type { Metadata } from "next";
 
 // 内容最后核验日期（第43步：每页 H1 下显示）。数据源：PowerPyx Launch build 交叉验证。
@@ -124,6 +125,18 @@ function extractFaq(content: string): { q: string; a: string }[] {
   return faqs;
 }
 
+// 提取 H2 标题，用于本页目录（TOC）。
+function extractHeadings(content: string): { id: string; text: string }[] {
+  const headings: { id: string; text: string }[] = [];
+  const re = /^##\s+(.+)$/gm;
+  let m: RegExpExecArray | null;
+  let i = 0;
+  while ((m = re.exec(content))) {
+    headings.push({ id: `sec-${++i}`, text: m[1].trim() });
+  }
+  return headings;
+}
+
 export default function GuidePage({
   params,
 }: {
@@ -142,6 +155,17 @@ export default function GuidePage({
   const prevChapter = chapterIdx > 0 ? CHAPTERS[chapterIdx - 1] : null;
   const nextChapter =
     chapterIdx >= 0 && chapterIdx < CHAPTERS.length - 1 ? CHAPTERS[chapterIdx + 1] : null;
+
+  // 本页目录（TOC）+ 给 H2 加锚点 id
+  const headings = extractHeadings(post.content);
+  let h2Counter = 0;
+  const components = {
+    h2: (props: Record<string, unknown>) => {
+      h2Counter += 1;
+      // eslint-disable-next-line react/prop-types
+      return <h2 id={`sec-${h2Counter}`} {...props} />;
+    },
+  };
 
   // BreadcrumbList 结构化数据
   const breadcrumbJsonLd = {
@@ -190,7 +214,8 @@ export default function GuidePage({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
         />
       )}
-      <article className="guide">
+      <div className="guide-layout">
+        <article className="guide">
         <nav className="breadcrumb" aria-label="面包屑">
           <Link href={`/${params.locale}`}>首页</Link>
           {parent && (
@@ -220,6 +245,7 @@ export default function GuidePage({
         <div className="prose">
           <MDXRemote
             source={post.content}
+            components={components as Record<string, React.ComponentType<Record<string, unknown>>>}
             options={{
               // remark-gfm@4 需配合 next-mdx-remote@6（内部 @mdx-js/mdx@3，unified@11 生态）。
               // 断言 any 以防传递依赖类型路径不一致（运行时无影响）。
@@ -247,7 +273,9 @@ export default function GuidePage({
             )}
           </nav>
         )}
-      </article>
+        </article>
+        <Toc headings={headings} />
+      </div>
     </>
   );
 }
