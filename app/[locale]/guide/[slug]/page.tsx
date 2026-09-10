@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
@@ -7,7 +8,27 @@ import { getPost, getSlugs, getContentLocales } from "@/lib/posts";
 import { locales } from "@/lib/locales";
 import { siteConfig } from "@/lib/site";
 import { IMAGE_DIMS } from "@/lib/imageDims";
+import { CHAPTERS } from "@/lib/chapters";
 import type { Metadata } from "next";
+
+// 内容最后核验日期（第43步：每页 H1 下显示）。数据源：PowerPyx Launch build 交叉验证。
+const LAST_VERIFIED = "2026-09-10";
+const GAME_BUILD = "Launch";
+
+// 父级 Hub 映射：根据 slug 返回 Breadcrumb 的父级（首页 > 父级 > 当前页）。
+function breadcrumbParent(slug: string): { label: string; href: string } | null {
+  if (/^chapter-\d+/.test(slug))
+    return { label: "章节攻略", href: "chapters" };
+  if (
+    ["rusty-sword", "falchion", "kopis", "greek-sword", "sica", "khopesh", "broken-spear", "xiphos"].includes(slug)
+  )
+    return { label: "全收集 · 刀剑", href: "blades" };
+  if (["charms", "artefacts", "theseus-echoes", "resonance-points", "collectibles"].includes(slug))
+    return { label: "全收集", href: "collectibles" };
+  if (["story", "ending", "sophia", "prequel", "series", "characters"].includes(slug))
+    return { label: "剧情", href: "story" };
+  return null;
+}
 
 // locale → Open Graph 语言代码
 const OG_LOCALE: Record<string, string> = {
@@ -115,6 +136,13 @@ export default function GuidePage({
   const hasHero = fm.heroImage ? heroImageExists(fm.heroImage) : false;
   const url = `${siteConfig.siteUrl}/${params.locale}/guide/${post.slug}`;
 
+  // Breadcrumb 父级 + 章节上一章/下一章
+  const parent = breadcrumbParent(post.slug);
+  const chapterIdx = CHAPTERS.findIndex((c) => c.slug === post.slug);
+  const prevChapter = chapterIdx > 0 ? CHAPTERS[chapterIdx - 1] : null;
+  const nextChapter =
+    chapterIdx >= 0 && chapterIdx < CHAPTERS.length - 1 ? CHAPTERS[chapterIdx + 1] : null;
+
   // BreadcrumbList 结构化数据
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
@@ -163,9 +191,21 @@ export default function GuidePage({
         />
       )}
       <article className="guide">
+        <nav className="breadcrumb" aria-label="面包屑">
+          <Link href={`/${params.locale}`}>首页</Link>
+          {parent && (
+            <>
+              <span className="bc-sep">›</span>
+              <Link href={`/${params.locale}/guide/${parent.href}`}>{parent.label}</Link>
+            </>
+          )}
+          <span className="bc-sep">›</span>
+          <span className="bc-current">{fm.eyebrow || fm.title}</span>
+        </nav>
         <header className="guide-header">
           <span className="eyebrow">{fm.eyebrow}</span>
           <h1>{fm.title}</h1>
+          <p className="guide-verified">最后核验：{LAST_VERIFIED} · 游戏版本：{GAME_BUILD}</p>
           {hasHero && (
             <img
               className="guide-hero"
@@ -187,6 +227,26 @@ export default function GuidePage({
             }}
           />
         </div>
+        {(prevChapter || nextChapter) && (
+          <nav className="chapter-nav">
+            {prevChapter ? (
+              <Link className="chapter-nav-item" href={`/${params.locale}/guide/${prevChapter.slug}`}>
+                <span className="cn-label">上一章</span>
+                <span className="cn-name">{prevChapter.en}</span>
+              </Link>
+            ) : (
+              <span />
+            )}
+            {nextChapter ? (
+              <Link className="chapter-nav-item cn-next" href={`/${params.locale}/guide/${nextChapter.slug}`}>
+                <span className="cn-label">下一章</span>
+                <span className="cn-name">{nextChapter.en}</span>
+              </Link>
+            ) : (
+              <span />
+            )}
+          </nav>
+        )}
       </article>
     </>
   );

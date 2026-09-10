@@ -1154,3 +1154,66 @@ img {
   .hero-center { padding: 40px 0 36px; }
   .hero-center h1 { font-size: 1.8rem; }
 }
+
+/* ============ 攻略页增强（Breadcrumb/章节导航/核验） ============ */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: rgb(var(--text-muted));
+  padding: 16px 0 4px;
+}
+.breadcrumb a {
+  color: rgb(var(--text-muted));
+}
+.breadcrumb a:hover {
+  color: hsl(var(--nav-theme));
+}
+.bc-sep {
+  color: rgb(var(--border));
+  font-weight: 700;
+}
+.bc-current {
+  color: rgb(var(--text));
+  font-weight: 600;
+}
+.guide-verified {
+  font-size: 0.82rem;
+  color: rgb(var(--text-muted));
+  margin: 6px 0 12px;
+}
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 36px;
+  padding-top: 20px;
+  border-top: 1px solid rgb(var(--border));
+}
+.chapter-nav-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 12px 16px;
+  border: 1px solid rgb(var(--border));
+  border-radius: 12px;
+  max-width: 48%;
+}
+.chapter-nav-item:hover {
+  text-decoration: none;
+  border-color: hsl(var(--nav-theme) / 0.5);
+}
+.chapter-nav-item.cn-next {
+  text-align: right;
+}
+.cn-label {
+  font-size: 0.75rem;
+  color: rgb(var(--text-muted));
+}
+.cn-name {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: rgb(var(--text));
+}
