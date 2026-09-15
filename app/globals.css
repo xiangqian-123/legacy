@@ -1192,6 +1192,34 @@ img {
   padding-top: 20px;
   border-top: 1px solid rgb(var(--border));
 }
+/* Related guides 区块（lib/related.ts 驱动，正文后渲染） */
+.related {
+  margin-top: 36px;
+  padding-top: 20px;
+  border-top: 1px solid rgb(var(--border));
+}
+.related-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+.related-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 8px 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.related-list a {
+  display: inline-block;
+  color: rgb(var(--accent));
+  text-decoration: none;
+  padding: 4px 0;
+}
+.related-list a:hover {
+  text-decoration: underline;
+}
 .chapter-nav-item {
   display: flex;
   flex-direction: column;

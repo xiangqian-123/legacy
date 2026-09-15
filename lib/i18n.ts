@@ -20,11 +20,20 @@ export function getMessages(locale: string): Record<string, unknown> {
   return {};
 }
 
+// 支持嵌套 key（"guide.lastVerified" → messages.guide.lastVerified）。
 export function pick(
   messages: Record<string, unknown>,
   key: string,
   fallback = ""
 ): string {
-  const v = messages[key];
+  let v: unknown = messages;
+  for (const part of key.split(".")) {
+    if (v && typeof v === "object") {
+      v = (v as Record<string, unknown>)[part];
+    } else {
+      v = undefined;
+      break;
+    }
+  }
   return typeof v === "string" ? v : fallback;
 }

@@ -152,6 +152,32 @@
   "trailer": {
     "title": "Official Trailer"
   },
+  "guide": {
+    "breadcrumbAria": "Breadcrumb",
+    "bcHome": "Home",
+    "bcChapters": "Chapters",
+    "bcBlades": "Collectibles · Blades",
+    "bcCollectibles": "Collectibles",
+    "bcStory": "Story",
+    "lastVerified": "Last verified",
+    "gameVersion": "Game version",
+    "prevChapter": "Previous chapter",
+    "nextChapter": "Next chapter",
+    "tocTitle": "On this page",
+    "tocSummary": "Page contents",
+    "relatedTitle": "Related guides"
+  },
+  "legalPages": {
+    "privacyTitle": "Privacy Policy",
+    "privacyDescription": "Privacy policy of this fan-made community wiki.",
+    "termsTitle": "Terms of Service",
+    "termsDescription": "Terms of service of this fan-made community wiki."
+  },
+  "notFound": {
+    "title": "Page not found",
+    "body": "The page you're looking for may have moved, or the link is misspelled.",
+    "cta": "Back to home"
+  },
   "footer": {
     "aboutTitle": "Resonance Plague Tale Wiki",
     "about": "Resonance Plague Tale Wiki is an independent fan site covering beginner guides, skill builds, complete charm and blade locations, the chapter list, the ending explained, and language support for Resonance: A Plague Tale Legacy. Our goal: every secret of Minotaur Island, explained.",

@@ -1,5 +1,24 @@
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import { isValidLocale } from "@/lib/locales";
+import { getMessages } from "@/lib/i18n";
+import { siteConfig } from "@/lib/site";
+
+// noindex,follow + locale 正确的 title/description（不再继承中文默认值）。
+export function generateMetadata({
+  params,
+}: {
+  params: { locale: string };
+}): Metadata {
+  const lp = (getMessages(params.locale).legalPages ?? {}) as Record<string, unknown>;
+  const s = (v: unknown, fb: string): string => (typeof v === "string" ? v : fb);
+  return {
+    title: s(lp.termsTitle, "Terms of Service"),
+    description: s(lp.termsDescription, "Terms of service of this fan-made community wiki."),
+    alternates: { canonical: `${siteConfig.siteUrl}/${params.locale}/terms` },
+    robots: { index: false, follow: true },
+  };
+}
 
 export default function TermsPage({ params }: { params: { locale: string } }) {
   if (!isValidLocale(params.locale)) notFound();

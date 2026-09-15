@@ -152,6 +152,32 @@
   "trailer": {
     "title": "官方预告片"
   },
+  "guide": {
+    "breadcrumbAria": "面包屑",
+    "bcHome": "首页",
+    "bcChapters": "章节攻略",
+    "bcBlades": "全收集 · 刀剑",
+    "bcCollectibles": "全收集",
+    "bcStory": "剧情",
+    "lastVerified": "最后核验",
+    "gameVersion": "游戏版本",
+    "prevChapter": "上一章",
+    "nextChapter": "下一章",
+    "tocTitle": "本页目录",
+    "tocSummary": "页面目录",
+    "relatedTitle": "相关攻略"
+  },
+  "legalPages": {
+    "privacyTitle": "隐私政策",
+    "privacyDescription": "本粉丝攻略站的隐私政策。",
+    "termsTitle": "服务条款",
+    "termsDescription": "本粉丝攻略站的服务条款。"
+  },
+  "notFound": {
+    "title": "页面没找到",
+    "body": "你要找的页面可能已被移动，或链接拼写有误。",
+    "cta": "返回首页"
+  },
   "footer": {
     "aboutTitle": "Resonance Plague Tale Wiki",
     "about": "Resonance Plague Tale Wiki 是一个独立的粉丝攻略站，覆盖《瘟疫传说：共鸣》的新手入门、技能加点、护符与刀剑全收集、章节列表、结局解析与中文支持说明。我们的目标是把米诺陶洛斯岛的每一个秘密都讲清楚。",

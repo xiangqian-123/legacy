@@ -6,9 +6,11 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
 import { getPost, getSlugs, getContentLocales } from "@/lib/posts";
 import { locales } from "@/lib/locales";
+import { getMessages, pick } from "@/lib/i18n";
 import { siteConfig } from "@/lib/site";
 import { IMAGE_DIMS } from "@/lib/imageDims";
 import { CHAPTERS } from "@/lib/chapters";
+import { getRelated } from "@/lib/related";
 import Toc from "@/components/Toc";
 import type { Metadata } from "next";
 
@@ -17,17 +19,18 @@ const LAST_VERIFIED = "2026-09-10";
 const GAME_BUILD = "Launch";
 
 // 父级 Hub 映射：根据 slug 返回 Breadcrumb 的父级（首页 > 父级 > 当前页）。
-function breadcrumbParent(slug: string): { label: string; href: string } | null {
+// label 走 messages.guide.bc*（locale 化，不再硬编码中文）。
+function breadcrumbParent(slug: string): { key: string; href: string } | null {
   if (/^chapter-\d+/.test(slug))
-    return { label: "章节攻略", href: "chapters" };
+    return { key: "guide.bcChapters", href: "chapters" };
   if (
     ["rusty-sword", "falchion", "kopis", "greek-sword", "sica", "khopesh", "broken-spear", "xiphos"].includes(slug)
   )
-    return { label: "全收集 · 刀剑", href: "blades" };
+    return { key: "guide.bcBlades", href: "blades" };
   if (["charms", "artefacts", "theseus-echoes", "resonance-points", "collectibles"].includes(slug))
-    return { label: "全收集", href: "collectibles" };
+    return { key: "guide.bcCollectibles", href: "collectibles" };
   if (["story", "ending", "sophia", "prequel", "series", "characters"].includes(slug))
-    return { label: "剧情", href: "story" };
+    return { key: "guide.bcStory", href: "story" };
   return null;
 }
 
@@ -149,6 +152,13 @@ export default function GuidePage({
   const hasHero = fm.heroImage ? heroImageExists(fm.heroImage) : false;
   const url = `${siteConfig.siteUrl}/${params.locale}/guide/${post.slug}`;
 
+  // 模板 UI 文案（locale 化）。
+  const messages = getMessages(params.locale);
+  const t = (key: string, fb = ""): string => pick(messages, key, fb);
+
+  // 上下文相关内链（第二轮内链实验，范围见 lib/related.ts）。
+  const related = getRelated(post.slug);
+
   // Breadcrumb 父级 + 章节上一章/下一章
   const parent = breadcrumbParent(post.slug);
   const chapterIdx = CHAPTERS.findIndex((c) => c.slug === post.slug);
@@ -216,12 +226,12 @@ export default function GuidePage({
       )}
       <div className="guide-layout">
         <article className="guide">
-        <nav className="breadcrumb" aria-label="面包屑">
-          <Link href={`/${params.locale}`}>首页</Link>
+        <nav className="breadcrumb" aria-label={t("guide.breadcrumbAria")}>
+          <Link href={`/${params.locale}`}>{t("guide.bcHome")}</Link>
           {parent && (
             <>
               <span className="bc-sep">›</span>
-              <Link href={`/${params.locale}/guide/${parent.href}`}>{parent.label}</Link>
+              <Link href={`/${params.locale}/guide/${parent.href}`}>{t(parent.key)}</Link>
             </>
           )}
           <span className="bc-sep">›</span>
@@ -230,7 +240,7 @@ export default function GuidePage({
         <header className="guide-header">
           <span className="eyebrow">{fm.eyebrow}</span>
           <h1>{fm.title}</h1>
-          <p className="guide-verified">最后核验：{LAST_VERIFIED} · 游戏版本：{GAME_BUILD}</p>
+          <p className="guide-verified">{t("guide.lastVerified")}: {LAST_VERIFIED} · {t("guide.gameVersion")}: {GAME_BUILD}</p>
           {hasHero && (
             <img
               className="guide-hero"
@@ -257,7 +267,7 @@ export default function GuidePage({
           <nav className="chapter-nav">
             {prevChapter ? (
               <Link className="chapter-nav-item" href={`/${params.locale}/guide/${prevChapter.slug}`}>
-                <span className="cn-label">上一章</span>
+                <span className="cn-label">{t("guide.prevChapter")}</span>
                 <span className="cn-name">{prevChapter.en}</span>
               </Link>
             ) : (
@@ -265,7 +275,7 @@ export default function GuidePage({
             )}
             {nextChapter ? (
               <Link className="chapter-nav-item cn-next" href={`/${params.locale}/guide/${nextChapter.slug}`}>
-                <span className="cn-label">下一章</span>
+                <span className="cn-label">{t("guide.nextChapter")}</span>
                 <span className="cn-name">{nextChapter.en}</span>
               </Link>
             ) : (
@@ -273,8 +283,24 @@ export default function GuidePage({
             )}
           </nav>
         )}
+        {related.length > 0 && (
+          <nav className="related" aria-label={t("guide.relatedTitle")}>
+            <h2 className="related-title">{t("guide.relatedTitle")}</h2>
+            <ul className="related-list">
+              {related.map((r) => (
+                <li key={r.slug}>
+                  <Link href={`/${params.locale}/guide/${r.slug}`}>{r.label}</Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        )}
         </article>
-        <Toc headings={headings} />
+        <Toc
+          headings={headings}
+          title={t("guide.tocTitle")}
+          summary={t("guide.tocSummary")}
+        />
       </div>
     </>
   );
