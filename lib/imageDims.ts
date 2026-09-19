@@ -45,5 +45,29 @@ export const IMAGE_DIMS: Record<string, [number, number]> = {
   "/images/guides/story.jpg": [
     1280,
     720
+  ],
+  "/images/guides/press1.jpg": [
+    1280,
+    720
+  ],
+  "/images/guides/press2.jpg": [
+    1280,
+    720
+  ],
+  "/images/guides/press3.jpg": [
+    1280,
+    720
+  ],
+  "/images/guides/press4.jpg": [
+    1280,
+    720
+  ],
+  "/images/guides/press5.jpg": [
+    1280,
+    720
+  ],
+  "/images/guides/press6.jpg": [
+    1280,
+    720
   ]
 };
