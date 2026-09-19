@@ -116,9 +116,10 @@ function heroImageExists(src: string): boolean {
 }
 
 // 从 FAQ 页 MDX 内容提取 Q/A，用于 FAQPage 结构化数据。
+// 正文以 "**Q: 问题**" 换行 "A: 答案" 书写；frontmatter 设 faq: true 即启用。
 function extractFaq(content: string): { q: string; a: string }[] {
   const faqs: { q: string; a: string }[] = [];
-  const re = /\*\*Q[：:]\s*([^*]+)\*\*\s*\n(?:A[：:]\s*)?([\s\S]+?)(?=\n\*\*Q[：:]|$)/g;
+  const re = /\*\*Q[：:]\s*([^*]+)\*\*\s*\n(?:A[：:]\s*)?([\s\S]+?)(?=\n\*\*Q[：:]|\n##\s|$)/g;
   let m: RegExpExecArray | null;
   while ((m = re.exec(content))) {
     const q = m[1].trim();
@@ -197,8 +198,8 @@ export default function GuidePage({
     ],
   };
 
-  // FAQPage 结构化数据（仅 FAQ 页）
-  const faqs = params.slug === "faq" ? extractFaq(post.content) : [];
+  // FAQPage 结构化数据（/faq 页或 frontmatter faq: true 的页面）
+  const faqs = params.slug === "faq" || fm.faq === true ? extractFaq(post.content) : [];
   const faqJsonLd =
     faqs.length > 0
       ? {

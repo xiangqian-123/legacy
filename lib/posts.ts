@@ -15,6 +15,8 @@ export interface PostFrontmatter {
   sourceUrl: string;
   order: number;
   published: boolean;
+  // faq: true 时页面启用 FAQPage 结构化数据（正文以 **Q: / A: 格式书写）
+  faq?: boolean;
 }
 
 export interface Post {
