@@ -1339,6 +1339,18 @@ img {
   }
 }
 
+/* ============ 广告位（2026-09-20 接入） ============ */
+/* 广告未填充前 :empty 不占位（移动端跳过注入、桌面端加载完成后才出现），
+   避免空 div 留白和 CLS；填充后正常居中展示。 */
+.ad-slot {
+  display: flex;
+  justify-content: center;
+  margin: 24px 0;
+}
+.ad-slot:empty {
+  display: none;
+}
+
 /* ============ 预告片缩略图 + 播放按钮（第54步） ============ */
 .video-thumb {
   position: relative;

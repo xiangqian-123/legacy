@@ -12,6 +12,7 @@ import { IMAGE_DIMS } from "@/lib/imageDims";
 import { CHAPTERS } from "@/lib/chapters";
 import { getRelated } from "@/lib/related";
 import Toc from "@/components/Toc";
+import { LeaderboardAd, CpmContainerAd } from "@/components/AdSlots";
 import type { Metadata } from "next";
 
 // 内容最后核验日期（第43步：每页 H1 下显示）。数据源：PowerPyx Launch build 交叉验证。
@@ -253,6 +254,7 @@ export default function GuidePage({
             />
           )}
         </header>
+        <LeaderboardAd />
         <div className="prose">
           <MDXRemote
             source={post.content}
@@ -264,6 +266,7 @@ export default function GuidePage({
             }}
           />
         </div>
+        <CpmContainerAd />
         {(prevChapter || nextChapter) && (
           <nav className="chapter-nav">
             {prevChapter ? (
