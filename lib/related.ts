@@ -40,6 +40,7 @@ export const RELATED: Record<string, RelatedLink[]> = {
     { slug: "collectibles", label: "Collectibles Hub" },
     { slug: "chapter-4-from-hell-it-rose", label: "Chapter 4: From Hell It Rose" },
     { slug: "chapter-2-felons", label: "Chapter 2: Felons" },
+    { slug: "patch-notes", label: "Patch Notes (October 6 Update)" },
   ],
   sica: [
     { slug: "blades", label: "All Blades Hub" },
@@ -72,6 +73,29 @@ export const RELATED: Record<string, RelatedLink[]> = {
     { slug: "achievements", label: "Trophies & Achievements" },
   ],
 
+  // ——— Patch Notes → 受影响实体（Oct 6 Bug Fix Update 双向内链）———
+  "patch-notes": [
+    { slug: "chapter-9-night-has-come", label: "Chapter 9: Night Has Come" },
+    { slug: "chapter-3-those-before-us", label: "Chapter 3: Those Before Us" },
+    { slug: "chapter-13-as-one", label: "Chapter 13: As One" },
+    { slug: "chapter-14-what-remains", label: "Chapter 14: What Remains" },
+    { slug: "falchion", label: "Falchion (Ch. 2)" },
+    { slug: "system-requirements", label: "System Requirements" },
+  ],
+
+  // ——— Stuttering / Performance 双向内链 ———
+  "stuttering": [
+    { slug: "system-requirements", label: "System Requirements" },
+    { slug: "patch-notes", label: "Patch Notes (October 6 Update)" },
+    { slug: "reviews", label: "Reviews & Scores" },
+  ],
+  "system-requirements": [
+    { slug: "stuttering", label: "Stuttering Fix & Performance" },
+    { slug: "patch-notes", label: "Patch Notes (October 6 Update)" },
+    { slug: "release-date", label: "Release Date & Unlock Times" },
+    { slug: "reviews", label: "Reviews & Scores" },
+  ],
+
   // ——— 刀剑单页回链（Blade → Blades Hub / 对应 Chapter / Trophy）———
   "rusty-sword": [
     { slug: "blades", label: "All Blades Hub" },
@@ -80,6 +104,7 @@ export const RELATED: Record<string, RelatedLink[]> = {
   falchion: [
     { slug: "blades", label: "All Blades Hub" },
     { slug: "chapter-2-felons", label: "Chapter 2: Felons" },
+    { slug: "patch-notes", label: "Patch Notes (October 6 Update)" },
   ],
   "greek-sword": [
     { slug: "blades", label: "All Blades Hub" },

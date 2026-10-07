@@ -15,7 +15,8 @@ import Toc from "@/components/Toc";
 import { LeaderboardAd, CpmContainerAd } from "@/components/AdSlots";
 import type { Metadata } from "next";
 
-// 内容最后核验日期（第43步：每页 H1 下显示）。数据源：PowerPyx Launch build 交叉验证。
+// 内容最后核验日期（每页 H1 下显示）。数据源：PowerPyx Launch build 交叉验证。
+// 单页可在 frontmatter 用 lastVerified / gameVersion 覆盖（仅真正重新核验过的页，禁止全站机械改日期）。
 const LAST_VERIFIED = "2026-09-10";
 const GAME_BUILD = "Launch";
 
@@ -242,7 +243,7 @@ export default function GuidePage({
         <header className="guide-header">
           <span className="eyebrow">{fm.eyebrow}</span>
           <h1>{fm.title}</h1>
-          <p className="guide-verified">{t("guide.lastVerified")}: {LAST_VERIFIED} · {t("guide.gameVersion")}: {GAME_BUILD}</p>
+          <p className="guide-verified">{t("guide.lastVerified")}: {fm.lastVerified ?? LAST_VERIFIED} · {t("guide.gameVersion")}: {fm.gameVersion ?? GAME_BUILD}</p>
           {hasHero && (
             <img
               className="guide-hero"

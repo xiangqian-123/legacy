@@ -17,6 +17,9 @@ export interface PostFrontmatter {
   published: boolean;
   // faq: true 时页面启用 FAQPage 结构化数据（正文以 **Q: / A: 格式书写）
   faq?: boolean;
+  // 可选：单页覆盖全站 LAST_VERIFIED / GAME_BUILD（仅真正重新核验过的页用，禁止全站机械改日期）
+  lastVerified?: string;
+  gameVersion?: string;
 }
 
 export interface Post {

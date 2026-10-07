@@ -1,0 +1,59 @@
+---
+title: "Resonance: A Plague Tale Legacy Stuttering Fix — Frame-Pacing & FPS Guide"
+description: "Resonance: A Plague Tale Legacy stuttering fix — the October 6 update reduced Nemesis Area stutter (not fully fixed), and Game Pass PSO cache shader stutter has a workaround. Best PC settings."
+eyebrow: "Performance"
+heroImage: "/images/guides/beginner.jpg"
+heroAlt: "Resonance stuttering fix guide"
+sourceLabel: "Official patch + community"
+sourceUrl: "https://store.steampowered.com/app/2713000/"
+order: 80
+published: true
+lastVerified: "2026-10-06"
+gameVersion: "1.003 (Oct 6 Update)"
+---
+
+Resonance: A Plague Tale Legacy is mostly smooth out of the box, but two specific stutter issues come up. Here's what's fixed, what isn't, and what you can do.
+
+## Quick Answer
+
+| Issue | Status | Fix |
+|---|---|---|
+| Nemesis Area stutter lag | **Reduced** (not fully fixed) | Update to the October 6 patch (1.003) |
+| Xbox Series X audio stutter | **Fixed** | October 6 patch |
+| Game Pass (PC/Xbox) shader-compilation stutter | Workaround | Pre-generated PSO cache (unofficial) |
+
+## 1. Nemesis Area stutter — reduced, not fixed
+
+The [October 6 Bug Fix Update](/en/guide/patch-notes) reduced stutter lag when approaching the new Nemesis Area. The official wording is **"reduced stutter lag"**, not "all stuttering fixed" — some frame-pacing hitches may still happen on PC.
+
+**Action:** update the game and your GPU drivers first. See [System Requirements](/en/guide/system-requirements).
+
+## 2. Game Pass PSO cache stutter — unofficial workaround
+
+The Xbox Game Pass / Xbox PC version builds its PSO (pipeline state object) shader cache progressively while you play, which causes shader-compilation and traversal stutters when entering new areas.
+
+There's a community workaround: a pre-generated PSO cache (~1.1 GB extracted) based on the larger Steam cache.
+
+**⚠️ Unofficial (community mod).** It does not modify the game executable or game files, but it is not an official fix — use at your own risk.
+
+1. Go to `C:\Users\<YOUR_USERNAME>\Documents\My Games\Resonance A Plague Tale Legacy\`
+2. Rename the existing `cache` folder to something like `cache_backup`
+3. Extract the downloaded `cache` folder into that directory — final structure `...\Resonance A Plague Tale Legacy\cache\0000_0004_0002\`
+4. Start the game normally.
+
+When an official fix ships, delete the new cache and let the game rebuild it (or restore `cache_backup`).
+
+## 3. PC settings that help
+
+From [Digital Foundry's review](https://www.digitalfoundry.net/reviews/resonance-a-plague-tale-legacy-excels-on-pc-with-superior-scalability):
+
+- Use **medium** for most settings (draw distance, shadow quality, volumetric lighting), **high** for screen-space reflections.
+- On an older CPU, lower the NPC/enemy refresh-rate settings to hit 60fps.
+- On 8GB cards, stick to **high** texture (not ultra) to avoid memory bottlenecks.
+- Targeting v-synced 30fps? Keep the refresh-rate settings high to avoid choppy 15Hz updates.
+
+## Related
+
+- [System Requirements](/en/guide/system-requirements)
+- [Patch Notes (October 6 Update)](/en/guide/patch-notes)
+- [Reviews & Scores](/en/guide/reviews)
