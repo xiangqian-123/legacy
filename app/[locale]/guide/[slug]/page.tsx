@@ -38,12 +38,7 @@ function breadcrumbParent(slug: string): { key: string; href: string } | null {
 
 // locale → Open Graph 语言代码
 const OG_LOCALE: Record<string, string> = {
-  "zh-CN": "zh_CN",
-  "zh-TW": "zh_TW",
   en: "en_US",
-  ja: "ja_JP",
-  ru: "ru_RU",
-  de: "de_DE",
 };
 
 export function generateStaticParams() {
@@ -68,13 +63,13 @@ export async function generateMetadata({
   }
   const fm = post.frontmatter;
   const url = `${siteConfig.siteUrl}/${params.locale}/guide/${post.slug}`;
-  const ogLocale = OG_LOCALE[params.locale] ?? "zh_CN";
+  const ogLocale = OG_LOCALE[params.locale] ?? "en_US";
   // 只标注真正有译文的语言（+ x-default），避免中文正文被标成 en/de/ja/ru。
   const translated = getContentLocales(post.slug);
   const languages: Record<string, string> = Object.fromEntries(
     translated.map((l) => [l, `${siteConfig.siteUrl}/${l}/guide/${post.slug}`])
   );
-  languages["x-default"] = `${siteConfig.siteUrl}/zh-CN/guide/${post.slug}`;
+  languages["x-default"] = `${siteConfig.siteUrl}/en/guide/${post.slug}`;
   // 无译文的语言只是 UI 翻译壳页（正文为中文），加 noindex 避免重复内容。
   const isTranslated = translated.includes(params.locale);
 

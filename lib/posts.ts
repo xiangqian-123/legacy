@@ -29,9 +29,9 @@ export interface Post {
   content: string;
 }
 
-// 以 zh-CN（源语言）为准列出全部 slug。
+// 以 en（源语言）为准列出全部 slug。
 export function getSlugs(): string[] {
-  const dir = path.join(CONTENT_DIR, "zh-CN");
+  const dir = path.join(CONTENT_DIR, "en");
   if (!fs.existsSync(dir)) return [];
   return fs
     .readdirSync(dir)
@@ -40,7 +40,7 @@ export function getSlugs(): string[] {
     .sort();
 }
 
-// 读取单篇文章，按回退链（本语言 → en → zh-CN）查找。
+// 读取单篇文章，按回退链（本语言 → en）查找。
 export function getPost(locale: string, slug: string): Post | null {
   const chain = [locale, ...CONTENT_FALLBACK];
   for (const loc of chain) {

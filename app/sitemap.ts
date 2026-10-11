@@ -12,14 +12,13 @@ function alternatesFor(path: string, slug?: string): MetadataRoute.Sitemap[numbe
       `${siteConfig.siteUrl}/${l}${path}`,
     ])
   );
-  languages["x-default"] = `${siteConfig.siteUrl}/zh-CN${path}`;
+  languages["x-default"] = `${siteConfig.siteUrl}/en${path}`;
   return { languages };
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const slugs = getSlugs();
-  // 只收录真正有译文的语言。en/de/ja/ru 目前是 UI 翻译壳页（正文为中文），
-  // 放进 sitemap 等于让 Google 抓 4 份重复内容。等补上译文后会自动纳入。
+  // 只收录真正有译文的语言（当前仅 en）。
   const locales = getContentLocales();
   const entries: MetadataRoute.Sitemap = [];
 

@@ -52,12 +52,7 @@ const list = (o: Dict, key: string): Dict[] => {
 };
 
 const OG_LOCALE: Record<string, string> = {
-  "zh-CN": "zh_CN",
-  "zh-TW": "zh_TW",
   en: "en_US",
-  ja: "ja_JP",
-  ru: "ru_RU",
-  de: "de_DE",
 };
 
 export function generateMetadata({
@@ -75,7 +70,7 @@ export function generateMetadata({
   const languages: Record<string, string> = Object.fromEntries(
     translated.map((l) => [l, `${siteConfig.siteUrl}/${l}`])
   );
-  languages["x-default"] = `${siteConfig.siteUrl}/zh-CN`;
+  languages["x-default"] = `${siteConfig.siteUrl}/en`;
 
   return {
     title,
@@ -90,7 +85,7 @@ export function generateMetadata({
       siteName: siteConfig.siteName,
       title,
       description,
-      locale: OG_LOCALE[locale] ?? "zh_CN",
+      locale: OG_LOCALE[locale] ?? "en_US",
       images: [{ url: `${siteConfig.siteUrl}${HERO_IMG}`, alt: siteConfig.gameName }],
     },
     twitter: {

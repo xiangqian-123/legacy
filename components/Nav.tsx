@@ -76,12 +76,7 @@ const NAV: NavItem[] = [
 ];
 
 const LANG_LABELS: Record<string, string> = {
-  "zh-CN": "中文",
-  "zh-TW": "繁體",
   en: "EN",
-  ja: "日本語",
-  ru: "РУ",
-  de: "DE",
 };
 
 export default function Nav({

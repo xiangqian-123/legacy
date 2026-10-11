@@ -1,10 +1,17 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  // 根路径重定向：原 app/page.tsx 的 redirect 逻辑上移到这里，
-  // 因为 html/body 已下沉到 [locale]/layout.tsx（lang 动态化）。
+  // 根路径 → 默认语言（英文）。
   async redirects() {
-    return [{ source: "/", destination: "/zh-CN", permanent: false }];
+    return [
+      { source: "/", destination: "/en", permanent: false },
+      // 已删除的非英语言 → 对应英文页（301）。
+      ...["zh-CN", "zh-TW", "ja", "ru", "de"].map((l) => ({
+        source: `/${l}/:path*`,
+        destination: "/en/:path*",
+        permanent: true,
+      })),
+    ];
   },
 };
 

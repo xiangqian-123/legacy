@@ -26,8 +26,8 @@ export const siteConfig: SiteConfig = {
   siteUrl: 'https://legacy-azure-nine.vercel.app',
   gameName: 'Resonance: A Plague Tale Legacy',
   gaId: process.env.NEXT_PUBLIC_GA_ID || 'G-SZ5JQSBED1',
-  defaultTitle: 'Resonance: A Plague Tale Legacy Wiki — 攻略与全收集指南',
+  defaultTitle: 'Resonance: A Plague Tale Legacy Wiki — Walkthrough, Puzzles & Collectibles',
   defaultDescription:
-    'Resonance: A Plague Tale Legacy（《瘟疫传说：共鸣》）粉丝攻略站：新手指南、技能加点、全刀剑与护符收集、章节列表、结局解析与中文支持说明。',
-  ogLocales: ['fr', 'es', 'pl', 'tr', 'ru', 'uk', 'ja', 'ko', 'zh-CN', 'zh-TW', 'th', 'vi', 'id'],
+    'Full 14-chapter walkthrough, puzzle solutions, all 275 collectibles, Resonance Points, blades, charms, trophies and skill guides for Resonance: A Plague Tale Legacy.',
+  ogLocales: [],
 };
