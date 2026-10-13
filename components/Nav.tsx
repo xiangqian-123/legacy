@@ -40,6 +40,7 @@ const NAV: NavItem[] = [
     children: [
       { key: "fullWalkthrough", slug: "chapters" },
       { key: "beginnerGuide", slug: "beginner" },
+      { key: "bossGuide", slug: "bosses" },
     ],
     grandTitleKey: "allChapters",
     grand: CHAPTERS,
@@ -69,6 +70,7 @@ const NAV: NavItem[] = [
     key: "more",
     children: [
       { key: "faq", slug: "faq" },
+      { key: "howLongToBeat", slug: "length" },
       { key: "gameInfo", slug: "wiki" },
       { key: "languageSupport", slug: "chinese" },
     ],

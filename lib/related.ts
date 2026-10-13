@@ -57,6 +57,7 @@ export const RELATED: Record<string, RelatedLink[]> = {
     { slug: "khopesh", label: "Khopesh (Ch. 7)" },
     { slug: "broken-spear", label: "Broken Spear (Ch. 9)" },
     { slug: "xiphos", label: "Xiphos (Ch. 10)" },
+    { slug: "bosses", label: "Boss & Elite Enemy Guide" },
   ],
   kopis: [
     { slug: "blades", label: "All Blades Hub" },
@@ -71,6 +72,34 @@ export const RELATED: Record<string, RelatedLink[]> = {
     { slug: "chapter-13-as-one", label: "Chapter 13: As One" },
     { slug: "skills", label: "Skills & Builds" },
     { slug: "achievements", label: "Trophies & Achievements" },
+  ],
+
+  // ——— Hub 层 → 内容页导流（2026-10-13 GSC 诊断第二轮）———
+  // 依据：bosses 28d 曝光 244 / 入链 1，length 28d 曝光 417 / 入链 5，
+  // 而 hub 层入链 80-121。此轮给 hub 页补 RELATED 键，把 hub 权重导向内容页；
+  // 另在 components/Nav.tsx 给这两页加导航入口（全站模板内链，收益最大）。
+  // 已避让各 hub 页正文 `## Related` 已有的链接（不重复指向同页）。
+  chapters: [
+    { slug: "bosses", label: "Boss & Elite Enemy Guide" },
+    { slug: "checklists", label: "Completion Checklists" },
+  ],
+  achievements: [
+    { slug: "bosses", label: "Boss & Elite Enemy Guide" },
+    { slug: "length", label: "Game Length & Completion Time" },
+    { slug: "checklists", label: "Completion Checklists" },
+  ],
+  collectibles: [
+    { slug: "length", label: "Game Length & Completion Time" },
+    { slug: "theseus-echoes", label: "All Theseus Echoes" },
+  ],
+  skills: [
+    { slug: "bosses", label: "Boss & Elite Enemy Guide" },
+    { slug: "best-skills", label: "Best Skills to Unlock First" },
+    { slug: "builds", label: "Best Builds" },
+  ],
+  "new-game-plus": [
+    { slug: "length", label: "Game Length & Completion Time" },
+    { slug: "checklists", label: "Completion Checklists" },
   ],
 
   // ——— Patch Notes → 受影响实体（Oct 6 Bug Fix Update 双向内链）———
